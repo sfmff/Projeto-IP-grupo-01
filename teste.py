@@ -26,3 +26,6 @@ if princesa == "Princesa de Fogo" or princesa == "Princesa Jujuba":
 
 print("Finalmente chegamos!")
 print(f'Foi um prazer te conhecer, {nome}! Boa sorte para encontrar a {princesa} :)')
+
+
+
