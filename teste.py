@@ -9,6 +9,12 @@ print("Gostei do seu nome!")
 
 # idade
 
+
+
+
+
+
+
 print("Quantos anos você tem?")
 idade = int(input())
 if idade == 12:
