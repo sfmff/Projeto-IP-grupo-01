@@ -4,15 +4,10 @@ Repositório do grupo 1 do projeto de IP do CIn ---
 
 Participantes:
 
-Leonardo Quintella,
-
-Saulo Fabianne,
-
-Daniel Cavalcanti,
-
-Tiago Rolim,
-
-Fernando Corrêa,
-
-Theo Bessa,
+Leonardo Quintella;
+Saulo Fabianne;
+Daniel Cavalcanti;
+Tiago Rolim;
+Fernando Corrêa;
+Theo Bessa.
 
