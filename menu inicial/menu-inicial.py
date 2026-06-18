@@ -32,11 +32,11 @@ RELOGIO = pygame.time.Clock()
 
 # Carregamento do som de hover dos botões
 try:
-    SOM_HOVER = pygame.mixer.Sound("../musicas/passar_cima_botao.mp3")
+    SOM_HOVER = pygame.mixer.Sound("../assets/audios/passar_cima_botao.mp3")
     SOM_HOVER.set_volume(0.1)
 except Exception:
     try:
-        SOM_HOVER = pygame.mixer.Sound("musicas/passar_cima_botao.mp3")
+        SOM_HOVER = pygame.mixer.Sound("assets/audios/passar_cima_botao.mp3")
         SOM_HOVER.set_volume(0.1)
     except Exception:
         print("Aviso: O arquivo 'passar_cima_botao.mp3' não foi encontrado.")
@@ -44,11 +44,11 @@ except Exception:
 
 # Carregamento do som de clique
 try:
-    SOM_CLIQUE = pygame.mixer.Sound("../musicas/clique_botao.mp3")
+    SOM_CLIQUE = pygame.mixer.Sound("../assets/audios/clique_botao.mp3")
     SOM_CLIQUE.set_volume(0.7)
 except Exception:
     try:
-        SOM_CLIQUE = pygame.mixer.Sound("musicas/clique_botao.mp3")
+        SOM_CLIQUE = pygame.mixer.Sound("assets/audios/clique_botao.mp3")
         SOM_CLIQUE.set_volume(0.7)
     except Exception:
         print("Aviso: O arquivo 'clique_botao.mp3' não foi encontrado.")
@@ -57,11 +57,11 @@ except Exception:
 # Carregamento da música de fundo
 MUSICA_CARREGADA = False
 try:
-    pygame.mixer.music.load("../musicas/musica_menu.mp3")
+    pygame.mixer.music.load("../assets/audios/musica_menu.mp3")
     MUSICA_CARREGADA = True
 except Exception:
     try:
-        pygame.mixer.music.load("musicas/musica_menu.mp3")
+        pygame.mixer.music.load("assets/audios/musica_menu.mp3")
         MUSICA_CARREGADA = True
     except Exception:
         print("Aviso: O arquivo 'musica_menu.mp3' não foi encontrado nos caminhos testados.")
@@ -113,7 +113,7 @@ class fundo:
         self.desenhar_campo(tela)
 
 
-# CLASSE: Botão (botão com efeito sonoro no hover e clique)
+# Classe Botão (botão com efeito sonoro no hover e clique)
 class Botao:
 
     def __init__(self, x, y, largura, altura, texto, acao_clique,
