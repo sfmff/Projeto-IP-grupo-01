@@ -186,7 +186,7 @@ class Botao:
 
         pygame.draw.rect(tela, cor_atual, retangulo_render, border_radius=6)
         pygame.draw.rect(tela, PRETO, retangulo_render, width=4, border_radius=6)
-        
+
         borda_interna = retangulo_render.inflate(-8, -8)
         pygame.draw.rect(tela, (255, 255, 255, 60), borda_interna, width=2, border_radius=4)
 
@@ -220,7 +220,7 @@ class Titulo:
         superficie_base = fonte.render(texto, True, AMARELO)
         superficie_contorno = fonte.render(texto, True, PRETO)
         retangulo_texto = superficie_base.get_rect(center=(LARGURA // 2, posicao_y))
-        
+
         for deslocamento_x, deslocamento_y in [(-3, 0), (3, 0), (0, -3), (0, 3), (-3,-3), (3,3), (-3,3), (3,-3)]:
             TELA.blit(superficie_contorno, retangulo_texto.move(deslocamento_x, deslocamento_y))
         TELA.blit(superficie_base, retangulo_texto)
@@ -293,6 +293,8 @@ class Game:
     def gerenciar_evento(self, evento):
         if evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE:
             self.app.voltar_ao_menu()
+        if evento.type == pygame.KEYDOWN and evento.key == pygame.K_g:
+            self.app.game_over()
 
     def atualizar(self, variacao_tempo):
         pass
@@ -301,20 +303,133 @@ class Game:
         tela.fill(VERDE_CAMPO_1)
 
 
-# Classe App 
+# Classe Fundo GameOver (campo escurecido para a tela de derrota)
+class FundoGameOver:
+    def __init__(self):
+        self.faixa_altura = 40
+
+    def atualizar(self, variacao_tempo):
+        pass
+
+    def desenhar(self, tela, tempo_decorrido):
+        num_faixas = ALTURA // self.faixa_altura + 1
+        for i in range(num_faixas):
+            cor = VERDE_CAMPO_1 if i % 2 == 0 else VERDE_CAMPO_2
+            pygame.draw.rect(
+                tela, cor,
+                (0, i * self.faixa_altura, LARGURA, self.faixa_altura)
+            )
+
+        espessura = 6
+        pygame.draw.rect(tela, BRANCO, (20, 20, LARGURA - 40, ALTURA - 40), espessura)
+        pygame.draw.line(tela, BRANCO, (20, ALTURA // 2), (LARGURA - 20, ALTURA // 2), espessura)
+        pygame.draw.circle(tela, BRANCO, (LARGURA // 2, ALTURA // 2), 55, espessura)
+        pygame.draw.circle(tela, BRANCO, (LARGURA // 2, ALTURA // 2), 4)
+        pygame.draw.rect(tela, BRANCO, (LARGURA // 2 - 110, 20, 220, 70), espessura)
+        pygame.draw.rect(tela, BRANCO, (LARGURA // 2 - 110, ALTURA - 90, 220, 70), espessura)
+
+        # Camada escura 
+        velatura = pygame.Surface((LARGURA, ALTURA), pygame.SRCALPHA)
+        velatura.fill((0, 0, 0, 160))
+        tela.blit(velatura, (0, 0))
+
+
+# Classe Titulo Game Over 
+class TituloGameOver:
+
+    def __init__(self, texto_linha1, texto_linha2, posicao_y):
+        self.linha1 = texto_linha1
+        self.linha2 = texto_linha2
+        self.posicao_y = posicao_y
+
+    def atualizar(self, variacao_tempo):
+        pass
+
+    def _render_linha(self, texto, fonte, posicao_y):
+        superficie_base = fonte.render(texto, True, VERMELHO)
+        superficie_contorno = fonte.render(texto, True, PRETO)
+        retangulo_texto = superficie_base.get_rect(center=(LARGURA // 2, posicao_y))
+
+        for deslocamento_x, deslocamento_y in [(-3, 0), (3, 0), (0, -3), (0, 3), (-3, -3), (3, 3), (-3, 3), (3, -3)]:
+            TELA.blit(superficie_contorno, retangulo_texto.move(deslocamento_x, deslocamento_y))
+        TELA.blit(superficie_base, retangulo_texto)
+
+    def desenhar(self, tela):
+        self._render_linha(self.linha1, FONTE_TITULO, self.posicao_y)
+        self._render_linha(self.linha2, FONTE_TITULO, self.posicao_y + 56)
+
+
+# Classe Game Over (Tela exibida quando o jogador perde)
+class GameOver:
+
+    def __init__(self, app):
+        self.app = app
+        self.background = FundoGameOver()
+        self.titulo = TituloGameOver("GAME", "OVER", 160)
+
+        largura_botao, altura_botao = 260, 64
+        x_centro = LARGURA // 2 - largura_botao // 2
+
+        self.botao_tentar_novamente = Botao(
+            x_centro, 340, largura_botao, altura_botao,
+            "REINICIAR", self.clicou_tentar_novamente,
+            cor_normal=VERDE_BOTAO, cor_hover=VERDE_BOTAO_HOVER, cor_click=VERDE_BOTAO_CLICK
+        )
+
+        self.botao_sair = Botao(
+            x_centro, 430, largura_botao, altura_botao,
+            "SAIR", self.clicou_sair,
+            cor_normal=(160, 40, 40), cor_hover=(210, 60, 60), cor_click=(110, 25, 25)
+        )
+
+        self.cronometro = 0.0
+
+    def clicou_tentar_novamente(self):
+        pygame.time.delay(200)
+        self.app.iniciar_jogo()
+
+    def clicou_sair(self):
+        pygame.time.delay(200)
+        self.app.sair()
+
+    def gerenciar_evento(self, evento):
+        self.botao_tentar_novamente.gerenciar_evento(evento)
+        self.botao_sair.gerenciar_evento(evento)
+
+    def atualizar(self, variacao_tempo):
+        self.cronometro += variacao_tempo
+        self.background.atualizar(variacao_tempo)
+        self.titulo.atualizar(variacao_tempo)
+        self.botao_tentar_novamente.atualizar(variacao_tempo)
+        self.botao_sair.atualizar(variacao_tempo)
+
+    def desenhar(self, tela):
+        self.background.desenhar(tela, self.cronometro)
+        self.titulo.desenhar(tela)
+        self.botao_tentar_novamente.desenhar(tela)
+        self.botao_sair.desenhar(tela)
+
+
+# Classe App
 class App:
     ESTADO_MENU = "menu"
     ESTADO_JOGO = "jogo"
+    ESTADO_GAME_OVER = "game_over"
 
     def __init__(self):
         self.estado_atual = App.ESTADO_MENU
         self.menu = Menu(self)
         self.jogo = None
+        self.tela_game_over = None
         self.rodando = True
 
     def iniciar_jogo(self):
         self.jogo = Game(self)
         self.estado_atual = App.ESTADO_JOGO
+
+    def game_over(self):
+        self.tela_game_over = GameOver(self)
+        self.estado_atual = App.ESTADO_GAME_OVER
 
     def voltar_ao_menu(self):
         self.estado_atual = App.ESTADO_MENU
@@ -338,18 +453,24 @@ class App:
             self.menu.gerenciar_evento(evento)
         elif self.estado_atual == App.ESTADO_JOGO:
             self.jogo.gerenciar_evento(evento)
+        elif self.estado_atual == App.ESTADO_GAME_OVER:
+            self.tela_game_over.gerenciar_evento(evento)
 
     def atualizar(self, variacao_tempo):
         if self.estado_atual == App.ESTADO_MENU:
             self.menu.atualizar(variacao_tempo)
         elif self.estado_atual == App.ESTADO_JOGO:
             self.jogo.atualizar(variacao_tempo)
+        elif self.estado_atual == App.ESTADO_GAME_OVER:
+            self.tela_game_over.atualizar(variacao_tempo)
 
     def desenhar(self):
         if self.estado_atual == App.ESTADO_MENU:
             self.menu.desenhar(TELA)
         elif self.estado_atual == App.ESTADO_JOGO:
             self.jogo.desenhar(TELA)
+        elif self.estado_atual == App.ESTADO_GAME_OVER:
+            self.tela_game_over.desenhar(TELA)
         pygame.display.flip()
 
     def rodar(self):
