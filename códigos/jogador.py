@@ -11,6 +11,7 @@ class jogador():
         self.y = y
         self.velocidade = 5
 
+
     # Método (função) que controla o movimento do jogador (objeto)
     def movimento(self):
 
