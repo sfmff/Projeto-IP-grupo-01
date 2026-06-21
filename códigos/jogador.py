@@ -17,11 +17,9 @@ class jogador():
 
         teclas = pygame.key.get_pressed()   
 
+        # o jogador só pode se mover lateralmente (porque a tela passa verticalmente)
         if teclas[pygame.K_LEFT]:
             x -= self.velocidade
         if teclas[pygame.K_RIGHT]:
             x += self.velocidade
-        if teclas[pygame.K_UP]:
-            y -= self.velocidade
-        if teclas[pygame.K_DOWN]:
-            y += self.velocidade
+       
