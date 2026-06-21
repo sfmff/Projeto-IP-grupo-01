@@ -32,7 +32,7 @@ RELOGIO = pygame.time.Clock()
 
 # Carregamento do som de hover dos botões
 try:
-    SOM_HOVER = pygame.mixer.Sound("../assets/audios/passar_cima_botao.mp3")
+    SOM_HOVER = pygame.mixer.Sound("Projeto-IP-grupo-01/assets/audios/passar_cima_botao.mp3")
     SOM_HOVER.set_volume(0.1)
 except Exception:
     try:
@@ -44,7 +44,7 @@ except Exception:
 
 # Carregamento do som de clique
 try:
-    SOM_CLIQUE = pygame.mixer.Sound("../assets/audios/clique_botao.mp3")
+    SOM_CLIQUE = pygame.mixer.Sound("Projeto-IP-grupo-01/assets/audios/clique_botao.mp3")
     SOM_CLIQUE.set_volume(0.7)
 except Exception:
     try:
@@ -57,7 +57,7 @@ except Exception:
 # Carregamento da música de fundo
 MUSICA_CARREGADA = False
 try:
-    pygame.mixer.music.load("../assets/audios/musica_menu.mp3")
+    pygame.mixer.music.load("Projeto-IP-grupo-01/assets/audios/musica_menu.mp3")
     MUSICA_CARREGADA = True
 except Exception:
     try:
