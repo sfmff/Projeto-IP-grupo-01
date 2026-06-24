@@ -8,7 +8,7 @@ class jogador():
     # Atributos do jogador (coordenadas iniciais e velocidade)
     def __init__(self, x, y, largura_mapa, power_up = False, slow_down = False):
 
-        self.image = pygame.image.load("assets/cenário e jogadores/zagueiro.png").convert_alpha()
+        self.image = pygame.image.load("assets/cenário e jogadores/neymar.png").convert_alpha()
         self.image = pygame.transform.scale(self.image, (120, 180))
         self.rect = self.image.get_rect()
         self.hitbox = self.rect.inflate(-10, -10)
