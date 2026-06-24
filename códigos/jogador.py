@@ -6,7 +6,7 @@ pygame.init()
 class jogador():
 
     # Atributos do jogador (coordenadas iniciais e velocidade)
-    def __init__(self, x, y, largura_mapa, power_up = False, slow_down = False):
+    def __init__(self, x, y, largura_mapa, power_up = False, bateu_no_obstaculo = False,):
 
         self.image = pygame.image.load("assets/cenário e jogadores/neymar.png").convert_alpha()
         self.image = pygame.transform.scale(self.image, (120, 180))
@@ -18,15 +18,15 @@ class jogador():
         self.velocidade = 10
         self.largura_mapa = largura_mapa
         self.power_up = power_up
-        self.slow_down = slow_down
+        self.bateu_no_obstaculo = bateu_no_obstaculo
         self.vidas = 5
 
         # se o power_up for True, a velocidade aumenta em 1 unidade
         if power_up:
             self.velocidade += 1
-        # se o slow_down for True, a velocidade diminui em 1 unidade
-        if slow_down:
-            self.velocidade -= 1
+        # se o bateu_no_obstaculo for True,
+        if bateu_no_obstaculo:
+            self.vidas -= 1
 
 
     # Método (função) que controla o movimento do jogador (objeto)
