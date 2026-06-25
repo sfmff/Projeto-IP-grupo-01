@@ -1,23 +1,29 @@
+
 import pygame
 pygame.init()
 
 
+
 # criação da classe do jogador (que será usada para criar o objeto "jogador" no main)
-class jogador():
+class jogador(pygame.sprite.Sprite):
 
 
     # Atributos do jogador (coordenadas iniciais e velocidade)
     def __init__(self, x, y, largura_mapa,):
+        super().__init__()
 
+        self.largura_mapa = largura_mapa
         self.image = pygame.image.load("assets/cenário e jogadores/neymar.png").convert_alpha()
         self.image = pygame.transform.scale(self.image, (120, 180))
         self.rect = self.image.get_rect()
-        self.hitbox = self.rect.inflate(-10, -10)
-
+        
         self.rect.x = x
         self.rect.y = y
+
+        self.hitbox = self.rect.inflate(-10, -10)
+        self.hitbox.center = self.rect.center
+
         self.velocidade = 10
-        self.largura_mapa = largura_mapa
         self.vidas = 5
 
         #coletáveis
@@ -50,3 +56,4 @@ class jogador():
             self.gatorade += 1
         if evento == "caneleira":
             self.caneleira += 1
+            self.vidas += 1
