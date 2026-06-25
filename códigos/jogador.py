@@ -35,6 +35,9 @@ class jogador(pygame.sprite.Sprite):
     # Método (função) que controla o movimento do jogador (objeto)
     def movimento(self):
 
+        if self.efeito_invencibilidade and (pygame.time.get_ticks() >= self.fim_efeito): # Se o efeito está ativado e passou o tempo dele
+            self.efeito_invencibilidade = False
+
         teclas = pygame.key.get_pressed()   
 
         # Só é permitido movimentos laterais (porque a tela se move verticalmente)
@@ -48,12 +51,18 @@ class jogador(pygame.sprite.Sprite):
     # Método (função) que recebe o evento (colisão) e atualiza os atributos do jogador
     def atualizaçao(self, evento):
         if evento == "dano":
-            self.vidas -= 1
-        if evento == "bola_de_ouro":
+            if not self.efeito_invencibilidade:
+                self.vidas -= 1
+
+        elif evento == "bola_de_ouro":
             self.bolas_de_ouro += 1
             self.velocidade += 1
-        if evento == "gatorade":
+
+        elif evento == "gatorade":
             self.gatorade += 1
-        if evento == "caneleira":
+            self.efeito_invencibilidade = True
+            self.fim_efeito = pygame.time.get_ticks() + 3000
+
+        elif evento == "caneleira":
             self.caneleira += 1
             self.vidas += 1
