@@ -13,7 +13,7 @@ class jogador(pygame.sprite.Sprite):
         super().__init__()
 
         self.largura_mapa = largura_mapa
-        self.image = pygame.image.load("assets/cenário e jogadores/neymar.png").convert_alpha()
+        self.image = pygame.image.load("assets/sprites_do_jogo/neymar.png").convert_alpha()
         self.image = pygame.transform.scale(self.image, (120, 180))
         self.rect = self.image.get_rect()
         

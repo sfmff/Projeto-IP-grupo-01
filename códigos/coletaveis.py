@@ -10,21 +10,21 @@ class Coletavel(pygame.sprite.Sprite):
         self.tipo = tipo
         
         if self.tipo == 'bola_ouro':
-            self.image = pygame.image.load('assets/imagens_jogo/bola_de_ouro.png').convert_alpha()
+            self.image = pygame.image.load('assets/sprites_do_jogo/bola_de_ouro.png').convert_alpha()
             self.image = pygame.transform.scale(self.image, (40, 40)) 
             
             self.pontos_ganhos = 500 
             self.multiplicador_bonus = 2.0 
             
         elif self.tipo == 'isotonico':
-            self.image = pygame.image.load('assets/imagens_jogo/isotonico.png').convert_alpha()
+            self.image = pygame.image.load('assets/sprites_do_jogo/isotonico.png').convert_alpha()
             self.image = pygame.transform.scale(self.image, (40, 40)) 
             
             self.tempo_duracao = 5000 
             self.da_invencibilidade = True
             
         elif self.tipo == 'caneleira':
-            self.image = pygame.image.load('assets/imagens_jogo/caneleira_aco.png').convert_alpha()
+            self.image = pygame.image.load('assets/sprites_do_jogo/caneleira_aco.png').convert_alpha()
             self.image = pygame.transform.scale(self.image, (40, 40)) 
             
             self.concede_escudo = True
