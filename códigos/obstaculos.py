@@ -9,7 +9,7 @@ class Obstaculo(pygame.sprite.Sprite):
         self.altura_tela = altura_tela
         self.tipo = tipo
 
-        # Criando os obstáculos zagueiro, cone e fã (o úncico com a mecânica de andar em diagonais)
+        # Criando os obstáculos zagueiro, cone e cartão (o úncico com a mecânica de andar em diagonais)
         if tipo == 'zagueiro':
             self.image = pygame.image.load('assets/cenário e jogadores/zagueiro.png').convert_alpha()
             self.velocidade_y = random.randint(3, 5)
@@ -20,8 +20,8 @@ class Obstaculo(pygame.sprite.Sprite):
             self.velocidade_y = random.randint(3, 5)
             self.velocidade_x = 0
         
-        elif tipo == 'fã':
-            self.image = pygame.image.load('assets/cenário e jogadores/fã.png').convert_alpha()
+        elif tipo == 'cartão':
+            self.image = pygame.image.load('assets/cenário e jogadores/cartão.png').convert_alpha()
             self.velocidade_y = random.randint(6, 9)
             self.velocidade_x = random.choice([-3, 3])
         
@@ -42,8 +42,8 @@ class Obstaculo(pygame.sprite.Sprite):
         self.rect.y += self.velocidade_y
         self.rect.x += self.velocidade_x
 
-        # Lógica do fã: quando ele bater na parede do mapa ele inverter a direção do movimento
-        if self.tipo == 'fã':
+        # Lógica do cartão: quando ele bater na parede do mapa ele inverter a direção do movimento
+        if self.tipo == 'cartão':
             if self.rect.right >= self.largura_tela or self.rect.left <= 0:
                 self.velocidade_x *= -1
         
