@@ -12,22 +12,25 @@ class Obstaculo(pygame.sprite.Sprite):
         # Criando os obstáculos zagueiro, cone e cartão (o úncico com a mecânica de andar em diagonais)
         if tipo == 'zagueiro':
             self.image = pygame.image.load('assets/sprites_do_jogo/zagueiro.png').convert_alpha()
+            self.image = pygame.transform.scale(self.image, (100, 160))
             self.velocidade_y = random.randint(3, 5)
             self.velocidade_x = random.randint(-9, -6)
         
         elif tipo == 'cone':
             self.image = pygame.image.load('assets/sprites_do_jogo/cone.png').convert_alpha()
+            self.image = pygame.transform.scale(self.image, (50, 60))
             self.velocidade_y = random.randint(3, 5)
             self.velocidade_x = 0
         
         elif tipo == 'cartão':
             self.image = pygame.image.load('assets/sprites_do_jogo/cartão.png').convert_alpha()
+            self.image = pygame.transform.scale(self.image, (30, 50))
             self.velocidade_y = random.randint(6, 9)
             self.velocidade_x = random.choice([-3, 3])
         
         # Hitbox dos obstáculos
         self.rect = self.image.get_rect()
-        self.rect = self.rect.inflate(-10, -10)
+        self.hitbox = self.rect.inflate(-10, -10)
 
         # Spawn dos obstáculos
         if self.tipo == 'zagueiro':
@@ -36,11 +39,14 @@ class Obstaculo(pygame.sprite.Sprite):
         else:
             self.rect.y = -100
             self.rect.x = random.randint(0, self.largura_tela - self.rect.width)
-            
+        
+        self.hitbox.center = self.rect.center
+
     # Movimentação dos obstáculos
     def update(self):
         self.rect.y += self.velocidade_y
         self.rect.x += self.velocidade_x
+        self.hitbox.center = self.rect.center
 
         # Lógica do cartão: quando ele bater na parede do mapa ele inverter a direção do movimento
         if self.tipo == 'cartão':
@@ -53,3 +59,4 @@ class Obstaculo(pygame.sprite.Sprite):
 
         if saiu_pelo_fundo or saiu_pelo_lado:
             self.kill()
+
