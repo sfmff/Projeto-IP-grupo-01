@@ -26,6 +26,8 @@ class jogador(pygame.sprite.Sprite):
 
         self.velocidade = 10
         self.vidas = 5
+        self.pontuaçao = 0
+        self.multiplicador_pont = 1
 
         #coletáveis
         self.bolas_de_ouro = 0
@@ -55,13 +57,14 @@ class jogador(pygame.sprite.Sprite):
 
     # Método (função) que recebe o evento (colisão) e atualiza os atributos do jogador
     def atualizaçao(self, evento):
+
         if evento == "dano":
             if not self.efeito_invencibilidade:
                 self.vidas -= 1
 
         elif evento == "bola_de_ouro":
+            self.multiplicador_pont += 1
             self.bolas_de_ouro += 1
-            self.velocidade += 1
 
         elif evento == "gatorade":
             self.gatorade += 1
