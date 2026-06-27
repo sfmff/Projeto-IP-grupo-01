@@ -1,6 +1,7 @@
 
 import pygame
 pygame.init()
+pygame.mixer.init()
 
 
 
@@ -17,6 +18,9 @@ class jogador(pygame.sprite.Sprite):
         self.image = pygame.image.load("assets/sprites_do_jogo/neymar.png").convert_alpha()
         self.image = pygame.transform.scale(self.image, (120, 180))
         self.rect = self.image.get_rect()
+
+        self.som_apito = pygame.mixer.Sound("assets/som_apito.mp3")
+        self.som_torcida = pygame.mixer.Sound("assets/som_torica_menor.mp3")
         
         self.rect.x = x
         self.rect.y = y
@@ -60,17 +64,21 @@ class jogador(pygame.sprite.Sprite):
 
         if evento == "dano":
             if not self.efeito_invencibilidade:
+                self.som_apito.play()
                 self.vidas -= 1
 
         elif evento == "bola_de_ouro":
+            self.som_torcida.play()
             self.multiplicador_pont += 1
             self.bolas_de_ouro += 1
 
         elif evento == "gatorade":
+            self.som_torcida.play()
             self.gatorade += 1
             self.efeito_invencibilidade = True
             self.fim_efeito = pygame.time.get_ticks() + 3000
 
         elif evento == "caneleira":
+            self.som_torcida.play()
             self.caneleira += 1
             self.vidas += 1
