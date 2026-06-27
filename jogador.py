@@ -9,10 +9,11 @@ class jogador(pygame.sprite.Sprite):
 
 
     # Atributos do jogador (coordenadas iniciais e velocidade)
-    def __init__(self, x, y, largura_mapa,):
+    def __init__(self, x, y, largura_mapa, altura_mapa):
         super().__init__()
 
         self.largura_mapa = largura_mapa
+        self.altura_mapa = altura_mapa
         self.image = pygame.image.load("assets/sprites_do_jogo/neymar.png").convert_alpha()
         self.image = pygame.transform.scale(self.image, (120, 180))
         self.rect = self.image.get_rect()
@@ -45,6 +46,10 @@ class jogador(pygame.sprite.Sprite):
             self.rect.x -= self.velocidade
         if teclas[pygame.K_RIGHT] and self.rect.right < self.largura_mapa:
             self.rect.x += self.velocidade
+        if teclas[pygame.K_UP] and self.rect.y > self.velocidade:
+            self.rect.y -= self.velocidade
+        if teclas[pygame.K_DOWN] and self.rect.bottom < self.altura_mapa:
+            self.rect.y += self.velocidade
         self.hitbox.center = self.rect.center
 
 
