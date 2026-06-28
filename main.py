@@ -119,9 +119,7 @@ class Game:
             if self.jogador.hitbox.colliderect(item.hitbox):
                 self.jogador.atualizaçao(item.tipo)
                 item.kill()
-                    
-                self.jogador.atualizaçao(item.tipo)
-                item.kill()
+
 
 
     def desenhar(self, tela):
