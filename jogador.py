@@ -22,7 +22,9 @@ class Jogador(pygame.sprite.Sprite):
         self.fim_efeito = 0
 
         self.som_apito = pygame.mixer.Sound("assets/audios/som_apito.mp3")
+        self.som_apito.set_volume(0.2)
         self.som_torcida = pygame.mixer.Sound("assets/audios/som_torcida_menor.mp3")
+        self.som_torcida.set_volume(0.08)
         
         self.rect.x = x
         self.rect.y = y
