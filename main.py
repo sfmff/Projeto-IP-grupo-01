@@ -121,7 +121,6 @@ class Game:
                 item.kill()
 
 
-
     def desenhar(self, tela):
         velocidade_campo = 8 if self.jogador.efeito_invencibilidade else 4
         self.fundo.desenhar(tela, velocidade=velocidade_campo)
