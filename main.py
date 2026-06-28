@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import pygame
 import sys
 import random
@@ -240,4 +238,3 @@ class App:
 if __name__ == "__main__":
     aplicativo = App()
     aplicativo.rodar()
->>>>>>> testes_main
