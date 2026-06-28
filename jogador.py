@@ -23,7 +23,6 @@ class Jogador(pygame.sprite.Sprite):
 
         self.som_apito = pygame.mixer.Sound("assets/audios/som_apito.mp3")
         self.som_torcida = pygame.mixer.Sound("assets/audios/som_torcida_menor.mp3")
-        self.som_torcida = pygame.mixer.Sound("assets/audios/som_torcica_menor.mp3")
         
         self.rect.x = x
         self.rect.y = y
