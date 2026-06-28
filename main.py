@@ -32,7 +32,7 @@ FONTE_UI = carregar_fonte(24)
 
 try:
     pygame.mixer.music.load("assets/audios/musica_menu.mp3") 
-    pygame.mixer.music.set_volume(0.5)
+    pygame.mixer.music.set_volume(0.05)
     pygame.mixer.music.play(-1)
 except Exception:
     print("Aviso: Música de menu não encontrada.")
