@@ -21,8 +21,8 @@ class jogador(pygame.sprite.Sprite):
         self.efeito_invencibilidade = False
         self.fim_efeito = 0
 
-        self.som_apito = pygame.mixer.Sound("assets/som_apito.mp3")
-        self.som_torcida = pygame.mixer.Sound("assets/som_torica_menor.mp3")
+        self.som_apito = pygame.mixer.Sound("assets/audios/som_apito.mp3")
+        self.som_torcida = pygame.mixer.Sound("assets/audios/som_torcica_menor.mp3")
         
         self.rect.x = x
         self.rect.y = y
