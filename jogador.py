@@ -42,6 +42,9 @@ class Jogador(pygame.sprite.Sprite):
         self.efeito_invencibilidade = False
         self.fim_efeito = 0
 
+        self.efeito_invencibilidade = False
+        self.fim_efeito = 0
+
 
     # Método (função) que controla o movimento do jogador (objeto)
     def movimento(self):
