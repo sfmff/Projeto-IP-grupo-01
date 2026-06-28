@@ -54,23 +54,6 @@ except Exception:
         print("Aviso: O arquivo 'clique_botao.mp3' não foi encontrado.")
         SOM_CLIQUE = None
 
-# Carregamento da música de fundo
-MUSICA_CARREGADA = False
-try:
-    pygame.mixer.music.load("Projeto-IP-grupo-01/assets/audios/musica_menu.mp3")
-    MUSICA_CARREGADA = True
-except Exception:
-    try:
-        pygame.mixer.music.load("assets/audios/musica_menu.mp3")
-        MUSICA_CARREGADA = True
-    except Exception:
-        print("Aviso: O arquivo 'musica_menu.mp3' não foi encontrado nos caminhos testados.")
-
-# Inicia a música em loop se tiver sido carregada com sucesso
-if MUSICA_CARREGADA:
-    pygame.mixer.music.set_volume(0.05)
-    pygame.mixer.music.play(loops=-1)
-
 
 def carregar_fonte(tamanho):
     try:
@@ -256,8 +239,6 @@ class Menu:
         self.cronometro = 0.0
 
     def clicou_jogar(self):
-        if MUSICA_CARREGADA:
-            pygame.mixer.music.stop()
         pygame.time.delay(200)
         self.app.iniciar_jogo()
 
@@ -433,8 +414,6 @@ class App:
 
     def voltar_ao_menu(self):
         self.estado_atual = App.ESTADO_MENU
-        if MUSICA_CARREGADA:
-            pygame.mixer.music.play(loops=-1)
 
     def sair(self):
         self.rodando = False
