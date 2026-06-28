@@ -6,7 +6,7 @@ pygame.mixer.init()
 
 
 # criação da classe do jogador (que será usada para criar o objeto "jogador" no main)
-class jogador(pygame.sprite.Sprite):
+class Jogador(pygame.sprite.Sprite):
 
 
     # Atributos do jogador (coordenadas iniciais e velocidade)
@@ -19,8 +19,8 @@ class jogador(pygame.sprite.Sprite):
         self.image = pygame.transform.scale(self.image, (120, 180))
         self.rect = self.image.get_rect()
 
-        self.som_apito = pygame.mixer.Sound("assets/som_apito.mp3")
-        self.som_torcida = pygame.mixer.Sound("assets/som_torica_menor.mp3")
+        self.som_apito = pygame.mixer.Sound("assets/audios/som_apito.mp3")
+        self.som_torcida = pygame.mixer.Sound("assets/audios/som_torcida_menor.mp3")
         
         self.rect.x = x
         self.rect.y = y
@@ -37,6 +37,8 @@ class jogador(pygame.sprite.Sprite):
         self.bolas_de_ouro = 0
         self.gatorade = 0
         self.caneleira = 0
+        self.efeito_invencibilidade = False
+        self.fim_efeito = 0
 
 
     # Método (função) que controla o movimento do jogador (objeto)
@@ -67,12 +69,12 @@ class jogador(pygame.sprite.Sprite):
                 self.som_apito.play()
                 self.vidas -= 1
 
-        elif evento == "bola_de_ouro":
+        elif evento == "bola_ouro":
             self.som_torcida.play()
             self.multiplicador_pont += 1
             self.bolas_de_ouro += 1
 
-        elif evento == "gatorade":
+        elif evento == "isotonico":
             self.som_torcida.play()
             self.gatorade += 1
             self.efeito_invencibilidade = True
