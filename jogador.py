@@ -18,9 +18,12 @@ class Jogador(pygame.sprite.Sprite):
         self.image = pygame.image.load("assets/sprites_do_jogo/neymar.png").convert_alpha()
         self.image = pygame.transform.scale(self.image, (120, 180))
         self.rect = self.image.get_rect()
+        self.efeito_invencibilidade = False
+        self.fim_efeito = 0
 
         self.som_apito = pygame.mixer.Sound("assets/audios/som_apito.mp3")
         self.som_torcida = pygame.mixer.Sound("assets/audios/som_torcida_menor.mp3")
+        self.som_torcida = pygame.mixer.Sound("assets/audios/som_torcica_menor.mp3")
         
         self.rect.x = x
         self.rect.y = y
