@@ -39,10 +39,10 @@ O jogo foi desenvolvido com a biblioteca Pygame e estruturado de forma modular (
 * **Tiago Almeida Rolim Cruz:** responsável pela lógica de funcionamento do jogo em main.py.
 
 ## 7.📚 Conceitos de Programação utilizados: 
-* Programação Orientada a Objetos (POO): Uso massivo de Classes (class), herança (pygame.sprite.Sprite) e métodos específicos (update, __init__) para dar vida e independência a cada elemento do jogo.
-* Estruturas de Controle de Fluxo e Dados: Uso de arrays em conjunto com a biblioteca random para armazenar os tipos de obstáculos e coletáveis e também para sortear qual deles vai aparecer na tela, além do uso de operadores lógicos e condicionais aliados a laços de repetição para controlar o desenrolar do jogo.
-* Matemática Aplicada: Manipulação de eixos X e Y para compor as lógicas do jogador, coletáveis e obstáculos.
-* Modularização: Separação das lógicas em arquivos individuais para facilitar a criação do jogo.
+* **Programação Orientada a Objetos (POO):** Uso massivo de Classes (class), herança (pygame.sprite.Sprite) e métodos específicos (update, __init__) para dar vida e independência a cada elemento do jogo.
+* **Estruturas de Controle de Fluxo e Dados:** Uso de arrays em conjunto com a biblioteca random para armazenar os tipos de obstáculos e coletáveis e também para sortear qual deles vai aparecer na tela, além do uso de operadores lógicos e condicionais aliados a laços de repetição para controlar o desenrolar do jogo.
+* **Matemática Aplicada:** Manipulação de eixos X e Y para compor as lógicas do jogador, coletáveis e obstáculos.
+* **Modularização:** Separação das lógicas em arquivos individuais para facilitar a criação do jogo.
 
 ## 8.📈 Aprendizados e Desafios:
 * **Dificuldade com o uso do GitHub:** foi um desafio usar essa poderosa ferramenta para programação no início do projeto, porém quanto mais produziamos e desenvolviamos o projeto nós nos familiarizamos com a ferramenta e conseguimos aprender como usar ela.
