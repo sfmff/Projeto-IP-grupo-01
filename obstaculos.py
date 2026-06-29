@@ -40,7 +40,13 @@ class Obstaculo(pygame.sprite.Sprite):
 
         # Hitbox dos obstáculos
         self.rect = self.image.get_rect()
-        self.hitbox = self.rect.inflate(-10, -10)
+
+        if self.tipo == 'zagueiro':
+            # Hitbox menor e mais "justa" que a imagem, já que o sprite
+            # do zagueiro tem muito espaço vazio nas bordas
+            self.hitbox = self.rect.inflate(-40, -50)
+        else:
+            self.hitbox = self.rect.inflate(-10, -10)
 
         # Spawn dos obstáculos
         if self.tipo == 'zagueiro':
@@ -69,5 +75,3 @@ class Obstaculo(pygame.sprite.Sprite):
 
         if saiu_pelo_fundo or saiu_pelo_lado:
             self.kill()
-
-
