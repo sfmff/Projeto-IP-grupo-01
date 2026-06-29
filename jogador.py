@@ -1,4 +1,3 @@
-
 import pygame
 pygame.init()
 pygame.mixer.init()
@@ -50,7 +49,7 @@ class Jogador(pygame.sprite.Sprite):
 
         teclas = pygame.key.get_pressed()   
 
-        # Só é permitido movimentos laterais (porque a tela se move verticalmente)
+       
         if teclas[pygame.K_LEFT] and self.rect.x > self.velocidade:
             self.rect.x -= self.velocidade
         if teclas[pygame.K_RIGHT] and self.rect.right < self.largura_mapa:
@@ -63,12 +62,12 @@ class Jogador(pygame.sprite.Sprite):
 
 
     # Método (função) que recebe o evento (colisão) e atualiza os atributos do jogador
-    def atualizaçao(self, evento):
+    def atualizaçao(self, evento, valor=1):
 
         if evento == "dano":
             if not self.efeito_invencibilidade:
                 self.som_apito.play()
-                self.vidas -= 1
+                self.vidas -= valor
 
         elif evento == "bola_ouro":
             self.som_torcida.play()
