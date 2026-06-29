@@ -90,7 +90,7 @@ class Game:
             self.app.voltar_ao_menu()
             
         if evento.type == self.SPAWN_OBSTACULO:
-            tipos = ('zagueiro', 'cone', 'cartão')
+            tipos = ('zagueiro', 'cone', 'cartão_amarelo', 'cartão_vermelho')
             obs = Obstaculo(LARGURA, ALTURA, random.choice(tipos))
             self.obstaculos.add(obs)
             self.todas_sprites.add(obs)
