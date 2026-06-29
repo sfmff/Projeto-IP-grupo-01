@@ -27,7 +27,7 @@ class Jogador(pygame.sprite.Sprite):
         self.rect.x = x
         self.rect.y = y
 
-        self.hitbox = self.rect.inflate(-10, -10)
+        self.hitbox = pygame.Rect(0, 0, 50, 80)
         self.hitbox.center = self.rect.center
 
         self.velocidade = 10
@@ -41,10 +41,6 @@ class Jogador(pygame.sprite.Sprite):
         self.caneleira = 0
         self.efeito_invencibilidade = False
         self.fim_efeito = 0
-
-        self.efeito_invencibilidade = False
-        self.fim_efeito = 0
-
 
     # Método (função) que controla o movimento do jogador (objeto)
     def movimento(self):
