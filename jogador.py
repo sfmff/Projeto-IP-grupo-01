@@ -41,6 +41,14 @@ class Jogador(pygame.sprite.Sprite):
         self.efeito_invencibilidade = False
         self.fim_efeito = 0
 
+        # Efeito de dano
+        self.tomou_dano = False
+        self.fim_efeito_piscar = 0
+        self.duraçao_piscar = 1200
+        self.intervalo_piscar = 100
+        self.visivel = True
+        self.ultimo_piscar = 0
+
         self.som_apito = pygame.mixer.Sound("assets/audios/som_apito.mp3")
         self.som_apito.set_volume(0.2)
         self.som_torcida = pygame.mixer.Sound("assets/audios/som_torcida_menor.mp3")
@@ -72,6 +80,17 @@ class Jogador(pygame.sprite.Sprite):
         if self.efeito_invencibilidade and (pygame.time.get_ticks() >= self.fim_efeito): # Se o efeito está ativado e passou o tempo dele
             self.efeito_invencibilidade = False
 
+        if self.tomou_dano:
+            agora = pygame.time.get_ticks()
+
+            if agora >= self.fim_efeito_piscar:
+                self.tomou_dano = False
+                self.visivel = True
+            elif agora - self.ultimo_piscar >= self.intervalo_piscar:
+                self.visivel = not self.visivel
+                self.ultimo_piscar = agora
+        else:
+            self.visivel = True
 
         self.indice += self.velocidade_animaçao
         if self.indice >= len(self.lista_frames) :
@@ -81,6 +100,12 @@ class Jogador(pygame.sprite.Sprite):
 
         if self.left:
             self.image = pygame.transform.flip(self.image, True, False)
+
+        if self.tomou_dano and not self.visivel:
+            self.image = self.image.copy()
+            self.image.set_alpha(60)
+        else:
+            self.image.set_alpha(255)
 
 
         teclas = pygame.key.get_pressed()   
@@ -109,6 +134,9 @@ class Jogador(pygame.sprite.Sprite):
             if not self.efeito_invencibilidade:
                 self.som_apito.play()
                 self.vidas -= valor
+                self.tomou_dano = True
+                self.ultimo_piscar = pygame.time.get_ticks()
+                self.fim_efeito_piscar = pygame.time.get_ticks() + self.duraçao_piscar
 
         elif evento == "bola_ouro":
             self.som_torcida.play()

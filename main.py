@@ -7,6 +7,7 @@ from obstaculos import Obstaculo
 from menu_inicial import Menu
 from game_over import GameOver
 
+
 LARGURA, ALTURA = 800, 600
 FPS = 60
 
