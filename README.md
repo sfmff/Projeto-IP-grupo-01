@@ -31,8 +31,8 @@ O jogo foi desenvolvido com a biblioteca Pygame e estruturado de forma modular (
 
 **Testando os obstáculos e coletáveis:**
 <p align="center">
-  <img src="assets/prints_do_jogo/tela_jogo1.png" width="480">
-  <img src="assets/prints_do_jogo/tela_jogo2.png" width="480">
+  <img src="assets/prints_do_jogo/tela_jogo1.png" width="600">
+  <img src="assets/prints_do_jogo/tela_jogo2.png" width="600">
 </p>
 
 **Tela do Turbo:**
@@ -40,8 +40,8 @@ O jogo foi desenvolvido com a biblioteca Pygame e estruturado de forma modular (
 
 **Telas de melhoria das animações do jogador**
 <p align="center">
-  <img src="assets/prints_do_jogo/tela_animacao1.png" width="480">
-  <img src="assets/prints_do_jogo/tela_animacao2.png" width="480">
+  <img src="assets/prints_do_jogo/tela_animacao1.png" width="600">
+  <img src="assets/prints_do_jogo/tela_animacao2.png" width="600">
 </p>
 
 **Tela de Game Over:**
