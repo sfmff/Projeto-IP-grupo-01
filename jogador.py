@@ -28,6 +28,7 @@ class Jogador(pygame.sprite.Sprite):
 
         self.hitbox = pygame.Rect(0, 0, 50, 80)
         self.hitbox.center = self.rect.center
+        self.hitbox.y -= 10
 
         self.velocidade = 10
         self.vidas = 5
@@ -59,6 +60,7 @@ class Jogador(pygame.sprite.Sprite):
         if teclas[pygame.K_DOWN] and self.rect.bottom < self.altura_mapa:
             self.rect.y += self.velocidade
         self.hitbox.center = self.rect.center
+        self.hitbox.y -= 10
 
 
     # Método (função) que recebe o evento (colisão) e atualiza os atributos do jogador
