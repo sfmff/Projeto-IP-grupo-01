@@ -79,7 +79,9 @@ assets
 * Sys: Biblioteca usada para encerrar corretamente o processo do programa, garantindo que a aplicação feche por completo junto com a janela do Pygame.
 * GitHub: Usado para versionamento de código, criação de branches e Pull Requests para manter o código seguro durante o trabalho em equipe.
 * VS Code: Editor de código utilizado para o desenvolvimento do projeto, facilitando a escrita e organização dos múltiplos arquivos (main.py, jogador.py, obstaculos.py, etc.), a navegação entre eles e a identificação de erros de sintaxe durante a codificação.
-  
+* Spritesheet Generator: Usado para gerar as imagens dos sprites do jogo presentes nos assets
+* Pixabay: Usado para criação dos áudios do jogo presentes nos assets
+
 ## 6.📝 Divisão de trabalho: 
 * **Daniel Cavalcanti Monteiro:** responsável pela lógica dos coletáveis em coletaveis.py.
 * **Fernando Corrêa Gambôa Pereira dos Santos:** responsável pela lógica envolvendo o jogador (vidas, efeitos, movimentação...) em jogador.py.
