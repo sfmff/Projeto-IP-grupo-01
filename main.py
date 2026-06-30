@@ -153,6 +153,8 @@ class Game:
             texto_turbo = FONTE_UI.render("TURBO ATIVADO!", True, AMARELO)
             tela.blit(texto_turbo, (LARGURA // 2 - 80, 40))
 
+            pygame.draw.circle(tela, (0, 250, 0), self.jogador.hitbox.center, 50, 2)
+
 
 class App:
     ESTADO_MENU = "menu"
