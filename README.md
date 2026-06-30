@@ -62,12 +62,12 @@ assets
 ![Gameplay1](assets/prints_do_jogo/tela_jogo1.png)
 ![Gameplay2](assets/prints_do_jogo/tela_jogo2.png)
 
-**Tela do Turbo:**
-![Turbo](assets/prints_do_jogo/tela_turbo.png)
-
 **Telas de melhoria das animações do jogador:**
 ![Animação1](assets/prints_do_jogo/tela_animacao1.png)
 ![Animação2](assets/prints_do_jogo/tela_animacao2.png)
+
+**Tela do Turbo:**
+![Turbo](assets/prints_do_jogo/tela_turbo.png)
 
 **Tela de Game Over:**
 ![Tela Game Over](assets/prints_do_jogo/tela_game_over.png)
