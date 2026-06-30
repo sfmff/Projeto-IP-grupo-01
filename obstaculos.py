@@ -54,7 +54,7 @@ class Obstaculo(pygame.sprite.Sprite):
             self.rect.x = self.largura_tela + 10
         else:
             self.rect.y = -100
-            self.rect.x = random.randint(0, self.largura_tela - self.rect.width)
+            self.rect.x = random.randint(60, self.largura_tela - self.rect.width - 60)
         
         self.hitbox.center = self.rect.center
 
