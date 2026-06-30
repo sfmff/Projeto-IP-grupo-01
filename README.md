@@ -69,10 +69,24 @@ O jogo foi desenvolvido com a biblioteca Pygame e estruturado de forma modular (
     * Python 3.x instalado.
     * Pygame instalado (rode pip install pygame no terminal).
 
+* **Mecânicas do jogo**
+   *O jogador inicia a partida com 5 pontos de vida e deve sobreviver o maior tempo possível enquanto aumenta sua pontuação. Para controlar o personagem, utilize as setas do teclado para se movimentar e desviar dos obstáculos.
+
+   * **Coletáveis**
+       * 🏆 Bola de Ouro: aumenta o multiplicador da pontuação, fazendo com que a pontuação cresça mais rapidamente.
+       * 🦵 Caneleira: concede +1 ponto de vida, permitindo ao jogador recuperar parte da saúde perdida.
+       * 🥤 Isotônico: ativa o Turbo, aumentando a velocidade do personagem e concedendo imunidade temporária contra os obstáculos por alguns segundos.
+  * **Obstáculos**
+       * 🟨 Cartão Amarelo: reduz 1 ponto de vida.
+       * 🗼 Cone: reduz 1 ponto de vida.
+       * 🛡️ Zagueiro: reduz 2 pontos de vida
+       * 🟥 Cartão Vermelho: reduz 3 pontos de vida.
+
+   *Gerencie suas vidas com cuidado, aproveite os coletáveis estrategicamente e tente alcançar a maior pontuação possível antes que suas vidas acabem.
+ 
 * **Instruções:**
     * Clone ou baixe nosso código no repositório oficial: https://github.com/sfmff/Projeto-IP-grupo-01
     * Rode o arquivo main.py.
-    * Use as setas do teclado para movimentar o jogador.
-    * Desvie dos zagueiros e cartões, colete as Bolas de Ouro e os Isotônicos para chegar à maior pontuação possível!
+ 
 
 # BOM JOGO E RUMO AO HEXA! 🏆
