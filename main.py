@@ -89,7 +89,7 @@ class Game:
             self.app.voltar_ao_menu()
             
         if evento.type == self.SPAWN_OBSTACULO:
-            tipos = ('zagueiro', 'cone', 'cartão')
+            tipos = ('zagueiro', 'cone', 'cartão_amarelo', 'cartão_vermelho')
             obs = Obstaculo(LARGURA, ALTURA, random.choice(tipos))
             self.obstaculos.add(obs)
             self.todas_sprites.add(obs)
@@ -109,10 +109,10 @@ class Game:
 
         for obs in self.obstaculos:
             if self.jogador.hitbox.colliderect(obs.hitbox):
-                self.jogador.atualizaçao("dano")
+                self.jogador.atualizaçao("dano", obs.dano)
                 obs.kill()
                 if self.jogador.vidas <= 0:
-                    self.app.game_over()
+                    self.app.game_over(self.jogador.pontuaçao)
         
         for item in self.coletaveis:
             if self.jogador.hitbox.colliderect(item.hitbox):
@@ -168,12 +168,14 @@ class App:
 
 
     def iniciar_jogo(self):
+        pygame.mixer.music.unpause()
         self.jogo = Game(self)
         self.estado_atual = App.ESTADO_JOGO
 
 
-    def game_over(self):
-        self.tela_game_over = GameOver(self)
+    def game_over(self, pontuacao=0):
+        pygame.mixer.music.pause()
+        self.tela_game_over = GameOver(self, pontuacao)
         self.estado_atual = App.ESTADO_GAME_OVER
 
 
