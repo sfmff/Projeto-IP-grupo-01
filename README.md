@@ -96,7 +96,7 @@ Durante o desenvolvimento do projeto, diversos conceitos estudados na disciplina
 * **Composição:** Empregada para organizar as responsabilidades, onde a classe `App` contém instâncias das outras telas como atributos, delegando as tarefas em vez de herdar delas.
 * **Estruturas de Controle e Repetição:** Uso extensivo de laços `for` e condicionais `if/elif/else` para iterar sobre coleções de sprites, gerenciar a lógica de movimentação e validar regras de negócio do jogo.
 * **Máquina de Estados Finita:** Implementada na classe `App` para gerenciar o fluxo do jogo, alternando dinamicamente o comportamento do software entre os estados de Menu, Jogo e  Game Over.
-* **Coleções e Estruturas de Dados:** Uso de listas e tuplas para o armazenamento de configurações do sistema.
+* **Coleções e Estruturas de Dados:**  Uso de tuplas para o armazenamento de configurações fixas, como cores e tipos de obstáculos/coletáveis sorteados e uso de listas para armazenar dinamicamente os frames de animação do jogador.
 * **Tratamento de Exceções:** Uso de blocos `try/except` para conferir robustez ao sistema, tratando falhas potenciais no carregamento de assets externos (imagens, fontes e arquivos de áudio) e fornecendo caminhos alternativos.
 * **Geometria Computacional e Colisões:** Aplicação prática de conceitos geométricos por meio da classe `pygame.Rect`, calculando a sobreposição de caixas de colisão (*hitboxes*) para detectar interações entre o jogador, obstáculos e coletáveis.
 * **Eventos e Temporização:** Controle do surgimento síncrono e periódico de elementos na tela através de eventos customizados do Pygame e temporizadores baseados no tempo delta.
