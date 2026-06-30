@@ -77,7 +77,6 @@ class Game:
         self.jogador = Jogador(LARGURA // 2, ALTURA - 200, LARGURA, ALTURA)
         self.todas_sprites.add(self.jogador)
 
-        # Eventos Customizados para Spawn
         self.SPAWN_OBSTACULO = pygame.USEREVENT + 1
         self.SPAWN_COLETAVEL = pygame.USEREVENT + 2
         
