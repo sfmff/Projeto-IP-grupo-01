@@ -34,8 +34,9 @@ class Coletavel(pygame.sprite.Sprite):
         self.hitbox = self.rect.inflate(-10, -10)
         
         self.rect.y = -100
-        self.rect.x = random.randint(0, self.largura_tela - self.rect.width)
-        
+        self.rect.x = random.randint(60, self.largura_tela - self.rect.width - 60)
+        self.hitbox.center = self.rect.center
+
         self.velocidade_y = random.randint(4, 7)
 
     def update(self):
