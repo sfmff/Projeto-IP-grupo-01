@@ -23,6 +23,21 @@ O jogo foi desenvolvido com a biblioteca Pygame e estruturado de forma modular (
 * **game_over.py:** Gera o plano de fundo da tela "Game Over" para ser mostrado assim que o jogador perde suas vidas.
 
 ## 4.📸 Capturas de Tela:
+**Tela Inicial:**
+![Tela Inicial do Jogo](assets/prints_do_jogo/tela_inicial.png)
+
+**Testando as movimentações:**
+![Movimentação](assets/prints_do_jogo/tela_movimentacao.png)
+
+**Testando os obstáculos e coletáveis:**
+![Gameplay1](assets/prints_do_jogo/tela_jogo1.png)
+![Gameplay2](assets/prints_do_jogo/tela_jogo2.png)
+
+**Tela do Turbo:**
+![Turbo](assets/prints_do_jogo/tela_turbo.png)
+
+**Tela de Game Over:**
+![Tela Game Over](assets/prints_do_jogo/tela_game_over.png)
 
 ## 5.🛠 Ferramentas, bibliotecas e frameworks utilizados:
 * Python 3.12+.
