@@ -18,30 +18,31 @@ O jogo foi desenvolvido com a biblioteca Pygame e estruturado de forma modular (
 
 ```text
 assets
-├── audios
-│   ├── clique_botao.mp3
-│   ├── musica_menu.mp3
-│   ├── passar_cima_botao.mp3
-│   ├── som_apito.mp3
-│   └── som_torcida_menor.mp3
-├── prints_do_jogo
-│   ├── tela_game_over.png
-│   ├── tela_inicial.png
-│   ├── tela_jogo1.png
-│   ├── tela_jogo2.png
-│   ├── tela_movimentacao.png
-│   └── tela_turbo.png
-└── sprites_do_jogo
-    ├── bola_de_ouro.png
-    ├── caneleira_aco.png
-    ├── cartão_amarelo.png
-    ├── cartão_vermelho.png
-    ├── cenario.png
-    ├── cone.png
-    ├── isotonico.png
-    ├── neymar.png
-    ├── neymar_run_sheet.png
-    └── zagueiro.png
+    ├── audios
+    │   ├── clique_botao.mp3
+    │   ├── musica_menu.mp3
+    │   ├── passar_cima_botao.mp3
+    │   ├── som_apito.mp3
+    │   └── som_torcida_menor.mp3
+    ├── prints_do_jogo
+    │   ├── tela_game_over.png
+    │   ├── tela_inicial.png
+    │   ├── tela_jogo1.png
+    │   ├── tela_jogo2.png
+    │   ├── tela_jogo3.png
+    │   ├── tela_jogo4.png
+    │   └── tela_turbo.png
+    └── sprites_do_jogo
+        ├── bola_de_ouro.png
+        ├── caneleira_aco.png
+        ├── cartão_amarelo.png
+        ├── cartão_vermelho.png
+        ├── cenario.png
+        ├── cone.png
+        ├── isotonico.png
+        ├── neymar.png
+        ├── neymar_run_sheet.png
+        └── zagueiro.png
 ```
 
 * **main.py:** Controla o loop principal do jogo, gerencia a tela, atualiza os grupos de sprites e calcula as colisões.
@@ -56,21 +57,16 @@ assets
 
 ![Tela Inicial do Jogo](assets/prints_do_jogo/tela_inicial.png)
 
-**Testando as movimentações:**
 
-![Movimentação](assets/prints_do_jogo/tela_movimentacao.png)
-
-**Testando os obstáculos e coletáveis:**
+**Gameplay:**
 
 ![Gameplay1](assets/prints_do_jogo/tela_jogo1.png)
 
 ![Gameplay2](assets/prints_do_jogo/tela_jogo2.png)
 
-**Telas de melhoria das animações do jogador:**
+![Gameplay3](assets/prints_do_jogo/tela_jogo3.png)
 
-![Animação1](assets/prints_do_jogo/tela_animacao1.png)
-
-![Animação2](assets/prints_do_jogo/tela_animacao2.png)
+![Gameplay4](assets/prints_do_jogo/tela_jogo4.png)
 
 **Tela do Turbo:**
 
