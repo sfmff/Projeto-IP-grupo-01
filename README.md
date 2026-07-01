@@ -48,7 +48,7 @@ assets
         └── zagueiro.png           # Imagem do zagueiro adversário (obstáculo)
 ```
 
-* **main.py:** Controla o loop principal do jogo, gerencia a tela, atualiza os grupos de sprites e calcula as colisões.
+* **main.py:** Controla o loop principal do jogo, gerencia a tela e HUD, atualiza os grupos de sprites e calcula as colisões, além do aumento de dificuldade.
 * **coletaveis.py:** Define os itens de vantagem (Bola de Ouro, Isotônico/Gatorade e Caneleira), cada um aplicando um bônus único ao jogador.
 * **obstaculos.py:** Define a física e o comportamento de diferentes obstáculos (zagueiro, cones e cartões amarelos e vermelhos) com diferentes níveis de dano ao jogador em sua colisão.
 * **jogador.py:** Define a classe do jogador, programando sua movimentação, status de invencibilidade e sistema de vidas.
@@ -131,7 +131,7 @@ Durante o desenvolvimento do projeto, diversos conceitos estudados na disciplina
 
 * **Mecânicas do jogo**
 
-  * O jogador inicia a partida com 5 pontos de vida e deve sobreviver o maior tempo possível enquanto aumenta sua pontuação. Para controlar o personagem, utilize as setas do teclado para se movimentar, desviar dos obstáculos e coletar os coletáveis espalhados pelo cenário para ganhar vantagens.
+  * O jogador inicia a partida com 5 pontos de vida e deve sobreviver o maior tempo possível enquanto aumenta sua pontuação. Com o passar do tempo, cada vez mais obstáculos aparecerão para atrapalhar. Para controlar o personagem, utilize as setas do teclado para se movimentar, desviar dos obstáculos e coletar os coletáveis espalhados pelo cenário para ganhar vantagens.
 
   ### 🕹️ Elementos do Jogo
 
