@@ -24,14 +24,14 @@ assets
     │   ├── passar_cima_botao.mp3   # Som emitido ao passar o mouse sobre os botões
     │   ├── som_apito.mp3           # Som emitido ao colidir com um obstáculo
     │   └── som_torcida_menor.mp3   # Som emitido ao colidir com um coletável
-    ├── prints_do_jogo
-    │   ├── tela_game_over.png
-    │   ├── tela_inicial.png
-    │   ├── tela_jogo1.png
-    │   ├── tela_jogo2.png
-    │   ├── tela_jogo3.png
-    │   ├── tela_jogo4.png
-    │   └── tela_turbo.png
+    │── prints_do_jogo
+    │   ├── tela_game_over.png      # Captura do menu de Game Over
+    │   ├── tela_inicial.png        # Captura do menu inicial 
+    │   ├── tela_jogo1.png          # Captura da Gameplay (1)
+    │   ├── tela_jogo2.png          # Captura da Gameplay (2)
+    │   ├── tela_jogo3.png          # Captura da Gameplay (3)
+    │   ├── tela_jogo4.png          # Captura da Gameplay (4)
+    │   └── tela_turbo.png          # Captura mostrando o efeito do Turbo ativado
     └── sprites_do_jogo
         ├── bola_de_ouro.png       # Imagem do troféu Bola de Ouro (coletável)
         ├── caneleira_aco.png      # Imagem da caneleira de proteção (coletável)
