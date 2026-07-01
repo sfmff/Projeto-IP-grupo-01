@@ -102,7 +102,7 @@ class Game:
         self.FATOR_FREQUENCIA_MAX_OBS = 4.0
         self.FATOR_FREQUENCIA_MAX_COL = 2.0
         self.TEMPO_PARA_DIFICULDADE_MAX = 150
-        
+
         self.timer_spawn_obstaculo = 0.0
         self.timer_spawn_coletavel = 0.0
 
@@ -225,13 +225,11 @@ class App:
 
 
     def iniciar_jogo(self):
-        pygame.mixer.music.unpause()
         self.jogo = Game(self)
         self.estado_atual = App.ESTADO_JOGO
 
 
     def game_over(self, pontuacao=0):
-        pygame.mixer.music.pause()
         self.tela_game_over = GameOver(self, pontuacao)
         self.estado_atual = App.ESTADO_GAME_OVER
 
