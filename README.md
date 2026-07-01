@@ -62,12 +62,12 @@ assets
 ![Gameplay1](assets/prints_do_jogo/tela_jogo1.png)
 ![Gameplay2](assets/prints_do_jogo/tela_jogo2.png)
 
-**Tela do Turbo:**
-![Turbo](assets/prints_do_jogo/tela_turbo.png)
-
 **Telas de melhoria das animações do jogador:**
 ![Animação1](assets/prints_do_jogo/tela_animacao1.png)
 ![Animação2](assets/prints_do_jogo/tela_animacao2.png)
+
+**Tela do Turbo:**
+![Turbo](assets/prints_do_jogo/tela_turbo.png)
 
 **Tela de Game Over:**
 ![Tela Game Over](assets/prints_do_jogo/tela_game_over.png)
@@ -79,7 +79,9 @@ assets
 * Sys: Biblioteca usada para encerrar corretamente o processo do programa, garantindo que a aplicação feche por completo junto com a janela do Pygame.
 * GitHub: Usado para versionamento de código, criação de branches e Pull Requests para manter o código seguro durante o trabalho em equipe.
 * VS Code: Editor de código utilizado para o desenvolvimento do projeto, facilitando a escrita e organização dos múltiplos arquivos (main.py, jogador.py, obstaculos.py, etc.), a navegação entre eles e a identificação de erros de sintaxe durante a codificação.
-  
+* Spritesheet Generator: Usado para gerar as imagens dos sprites do jogo presentes nos assets.
+* Pixabay: Usado para criação dos áudios do jogo presentes nos assets.
+
 ## 6.📝 Divisão de trabalho: 
 * **Daniel Cavalcanti Monteiro:** responsável pela lógica dos coletáveis em coletaveis.py.
 * **Fernando Corrêa Gambôa Pereira dos Santos:** responsável pela lógica envolvendo o jogador (vidas, efeitos, movimentação...) em jogador.py.
