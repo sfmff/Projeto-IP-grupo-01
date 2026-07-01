@@ -42,6 +42,9 @@ assets
         ├── isotonico.png          # Imagem da garrafa de isotônico (coletável)
         ├── neymar_run_sheet.png   # Folha com a sequência de imagens para a animação de corrida do Neymar
         └── zagueiro.png           # Imagem do zagueiro adversário (obstáculo)
+        └── vida.png               # Imagem de coração para representar a vida no HUD
+        └── turbo.png              # Texto especial para representar o uso do isotônico
+        └── turbo(apagado).png     # Texto especial para representar o uso do isotônico
 ```
 
 * **main.py:** Controla o loop principal do jogo, gerencia a tela, atualiza os grupos de sprites e calcula as colisões.
@@ -91,7 +94,7 @@ assets
 * **Leonardo Quintella Mendes Remigio:** responsável pelas imagens e sons do jogo na pasta assets.
 * **Saulo Fabianne de Melo Ferreira Filho:** responsável pela lógica dos obstáculos em obstaculos.py e pelo README.
 * **Theo Bessa da Costa:** responsável pela interface em menu_inicial.py e game_over.py.
-* **Tiago Almeida Rolim Cruz:** responsável pela lógica de funcionamento do jogo em main.py.
+* **Tiago Almeida Rolim Cruz:** responsável pela lógica de funcionamento do jogoe do HUD em main.py.
 
 ## 7.📚 Conceitos de Programação utilizados: 
 Durante o desenvolvimento do projeto, diversos conceitos estudados na disciplina foram aplicados na prática, além da aprendizagem de novos conceitos necessários para a implementação do jogo :
@@ -153,6 +156,7 @@ Durante o desenvolvimento do projeto, diversos conceitos estudados na disciplina
 * **Instruções:**
     * Clone ou baixe nosso código no repositório oficial: https://github.com/sfmff/Projeto-IP-grupo-01
     * Rode o arquivo main.py.
+    * Aperte F11 para tela cheia.
  
 
 # BOM JOGO E RUMO AO HEXA! 🏆
