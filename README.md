@@ -19,33 +19,36 @@ O jogo foi desenvolvido com a biblioteca Pygame e estruturado de forma modular (
 ```text
 assets
     ├── audios
-    │   ├── clique_botao.mp3
-    │   ├── musica_menu.mp3
-    │   ├── passar_cima_botao.mp3
-    │   ├── som_apito.mp3
-    │   └── som_torcida_menor.mp3
-    ├── prints_do_jogo
-    │   ├── tela_game_over.png
-    │   ├── tela_inicial.png
-    │   ├── tela_jogo1.png
-    │   ├── tela_jogo2.png
-    │   ├── tela_jogo3.png
-    │   ├── tela_jogo4.png
-    │   └── tela_turbo.png
+    │   ├── clique_botao.mp3        # Som emitido ao clicar em um botão dos menus
+    │   ├── musica_menu.mp3         # Trilha sonora do jogo
+    │   ├── passar_cima_botao.mp3   # Som emitido ao passar o mouse sobre os botões
+    │   ├── som_apito.mp3           # Som emitido ao colidir com um obstáculo
+    │   └── som_torcida_menor.mp3   # Som emitido ao colidir com um coletável
+    │── prints_do_jogo
+    │   ├── tela_game_over.png      # Captura do menu de Game Over
+    │   ├── tela_inicial.png        # Captura do menu inicial 
+    │   ├── tela_jogo1.png          # Captura da Gameplay (1)
+    │   ├── tela_jogo2.png          # Captura da Gameplay (2)
+    │   ├── tela_jogo3.png          # Captura da Gameplay (3)
+    │   ├── tela_jogo4.png          # Captura da Gameplay (4)
+    │   └── tela_turbo.png          # Captura mostrando o efeito do Turbo ativado
     └── sprites_do_jogo
-        ├── bola_de_ouro.png
-        ├── caneleira_aco.png
-        ├── cartão_amarelo.png
-        ├── cartão_vermelho.png
-        ├── cenario.png
-        ├── cone.png
-        ├── isotonico.png
-        ├── neymar.png
-        ├── neymar_run_sheet.png
-        └── zagueiro.png
+        ├── bola_de_ouro.png       # Imagem do troféu Bola de Ouro (coletável)
+        ├── caneleira_aco.png      # Imagem da caneleira de proteção (coletável)
+        ├── cartão_amarelo.png     # Imagem do cartão amarelo (obstáculo)
+        ├── cartão_vermelho.png    # Imagem do cartão vermelho (obstáculo)
+        ├── cenario.png            # Imagem de fundo do campo de futebol onde o jogo ocorre
+        ├── cone.png               # Imagem do cone de treino (obstáculo)
+        ├── isotonico.png          # Imagem da garrafa de isotônico (coletável)
+        ├── neymar_run_sheet.png   # Folha com a sequência de imagens para a animação de corrida do Neymar
+        └── pontuacao.png          # Texto estilizado escrito "PONTUAÇÃO" 
+        └── turbo(apagado).png     # Texto especial para representar o uso do isotônico
+        └── turbo.png              # Texto especial para representar o uso do isotônico
+        └── vida.png               # Imagem de coração para representar a vida no HUD
+        └── zagueiro.png           # Imagem do zagueiro adversário (obstáculo)
 ```
 
-* **main.py:** Controla o loop principal do jogo, gerencia a tela, atualiza os grupos de sprites e calcula as colisões.
+* **main.py:** Controla o loop principal do jogo, gerencia a tela e HUD, atualiza os grupos de sprites e calcula as colisões, além do aumento de dificuldade.
 * **coletaveis.py:** Define os itens de vantagem (Bola de Ouro, Isotônico/Gatorade e Caneleira), cada um aplicando um bônus único ao jogador.
 * **obstaculos.py:** Define a física e o comportamento de diferentes obstáculos (zagueiro, cones e cartões amarelos e vermelhos) com diferentes níveis de dano ao jogador em sua colisão.
 * **jogador.py:** Define a classe do jogador, programando sua movimentação, status de invencibilidade e sistema de vidas.
@@ -77,22 +80,22 @@ assets
 ![Tela Game Over](assets/prints_do_jogo/tela_game_over.png)
 
 ## 5.🛠 Ferramentas, bibliotecas e frameworks utilizados:
-* Python 3.12+.
-* Biblioteca Pygame: Biblioteca principal utilizada para a construção do jogo, sendo responsável pela criação da janela e do loop principal, pela captura de eventos de teclado e mouse, pela renderização das imagens e formas geométricas e pela reprodução de efeitos sonoros e músicas. O framework também facilitou o gerenciamento das entidades do jogo e permitiu implementar colisões de forma simples e hitboxes ajustadas.
-* Random: Biblioteca usada para gerar aleatoriedade principalmente para os obstáculos e coletáveis do jogo.
-* Sys: Biblioteca usada para encerrar corretamente o processo do programa, garantindo que a aplicação feche por completo junto com a janela do Pygame.
-* GitHub: Usado para versionamento de código, criação de branches e Pull Requests para manter o código seguro durante o trabalho em equipe.
-* VS Code: Editor de código utilizado para o desenvolvimento do projeto, facilitando a escrita e organização dos múltiplos arquivos (main.py, jogador.py, obstaculos.py, etc.), a navegação entre eles e a identificação de erros de sintaxe durante a codificação.
-* Spritesheet Generator: Usado para gerar as imagens dos sprites do jogo presentes nos assets.
-* Pixabay: Usado para criação dos áudios do jogo presentes nos assets.
+* **Python 3.12+.**
+* **Biblioteca Pygame:** Biblioteca principal utilizada para a construção do jogo, sendo responsável pela criação da janela e do loop principal, pela captura de eventos de teclado e mouse, pela renderização das imagens e formas geométricas e pela reprodução de efeitos sonoros e músicas. O framework também facilitou o gerenciamento das entidades do jogo e permitiu implementar colisões de forma simples e hitboxes ajustadas.
+* **Random:** Biblioteca usada para gerar aleatoriedade principalmente para os obstáculos e coletáveis do jogo.
+* **Sys:** Biblioteca usada para encerrar corretamente o processo do programa, garantindo que a aplicação feche por completo junto com a janela do Pygame.
+* **GitHub:** Usado para versionamento de código, criação de branches e Pull Requests para manter o código seguro durante o trabalho em equipe.
+* **VS Code:** Editor de código utilizado para o desenvolvimento do projeto, facilitando a escrita e organização dos múltiplos arquivos (main.py, jogador.py, obstaculos.py, etc.), a navegação entre eles e a identificação de erros de sintaxe durante a codificação.
+* **Spritesheet Generator:** Usado para gerar as imagens dos sprites do jogo presentes nos assets.
+* **Pixabay:** Usado para criação dos áudios do jogo presentes nos assets.
 
 ## 6.📝 Divisão de trabalho: 
-* **Daniel Cavalcanti Monteiro:** responsável pela lógica dos coletáveis em coletaveis.py.
-* **Fernando Corrêa Gambôa Pereira dos Santos:** responsável pela lógica envolvendo o jogador (vidas, efeitos, movimentação...) em jogador.py.
-* **Leonardo Quintella Mendes Remigio:** responsável pelas imagens e sons do jogo na pasta assets.
-* **Saulo Fabianne de Melo Ferreira Filho:** responsável pela lógica dos obstáculos em obstaculos.py e pelo README.
-* **Theo Bessa da Costa:** responsável pela interface em menu_inicial.py e game_over.py.
-* **Tiago Almeida Rolim Cruz:** responsável pela lógica de funcionamento do jogo em main.py.
+* **Daniel Cavalcanti Monteiro:** Responsável pela lógica dos coletáveis em coletaveis.py.
+* **Fernando Corrêa Gambôa Pereira dos Santos:** Responsável pela lógica envolvendo o jogador (vidas, efeitos, movimentação...) em jogador.py.
+* **Leonardo Quintella Mendes Remigio:** Responsável pelas imagens e sons do jogo na pasta assets.
+* **Saulo Fabianne de Melo Ferreira Filho:** Responsável pela lógica dos obstáculos em obstaculos.py e pelo README.
+* **Theo Bessa da Costa:** Responsável pela interface em menu_inicial.py e game_over.py.
+* **Tiago Almeida Rolim Cruz:** Responsável pela lógica de funcionamento do jogo e do HUD em main.py.
 
 ## 7.📚 Conceitos de Programação utilizados: 
 Durante o desenvolvimento do projeto, diversos conceitos estudados na disciplina foram aplicados na prática, além da aprendizagem de novos conceitos necessários para a implementação do jogo :
@@ -128,23 +131,33 @@ Durante o desenvolvimento do projeto, diversos conceitos estudados na disciplina
 
 * **Mecânicas do jogo**
 
-  * O jogador inicia a partida com 5 pontos de vida e deve sobreviver o maior tempo possível enquanto aumenta sua pontuação. Para controlar o personagem, utilize as setas do teclado para se movimentar e desviar dos obstáculos.
+  * O jogador inicia a partida com 5 pontos de vida e deve sobreviver o maior tempo possível enquanto aumenta sua pontuação. Com o passar do tempo, cada vez mais obstáculos aparecerão para atrapalhar. Para controlar o personagem, utilize as setas do teclado para se movimentar, desviar dos obstáculos e coletar os coletáveis espalhados pelo cenário para ganhar vantagens.
 
-   * **Coletáveis**
-       * 🏆 Bola de Ouro: aumenta o multiplicador da pontuação, fazendo com que a pontuação cresça mais rapidamente.
-       * 🦵 Caneleira: concede +1 ponto de vida, permitindo ao jogador recuperar parte da saúde perdida.
-       * 🥤 Isotônico: ativa o Turbo, aumentando a velocidade do personagem e concedendo imunidade temporária contra os obstáculos por alguns segundos.
-  * **Obstáculos**
-       * 🟨 Cartão Amarelo: reduz 1 ponto de vida.
-       * 🗼 Cone: reduz 1 ponto de vida.
-       * 🛡️ Zagueiro: reduz 2 pontos de vida
-       * 🟥 Cartão Vermelho: reduz 3 pontos de vida.
+  ### 🕹️ Elementos do Jogo
+
+    #### 🟩 Coletáveis
+
+    | Item | Nome | Efeito / Descrição |
+    | :---: | :--- | :--- |
+    | <img src="assets/sprites_do_jogo/bola_de_ouro.png" width="40" alt="Bola de Ouro"> | **Bola de Ouro** | Aumenta o multiplicador da pontuação, fazendo com que     os pontos cresçam mais rapidamente. |
+    | <img src="assets/sprites_do_jogo/caneleira_aco.png" width="40" alt="Caneleira"> | **Caneleira** | Concede +1 ponto de vida, permitindo ao jogador recuperar     parte da saúde perdida. |
+    | <img src="assets/sprites_do_jogo/isotonico.png" width="40" alt="Isotônico"> | **Isotônico** | Ativa o Turbo, aumentando a velocidade do personagem e             concedendo imunidade temporária contra obstáculos por alguns segundos. |
+
+    #### 🟥 Obstáculos
+
+    | Obstáculo | Nome | Penalidade / Descrição |
+    | :---: | :--- | :--- |
+    | <img src="assets/sprites_do_jogo/cartão_amarelo.png" width="40" alt="Cartão Amarelo"> | **Cartão Amarelo** | Reduz 1 ponto de vida ao colidir. |
+    | <img src="assets/sprites_do_jogo/cone.png" width="40" alt="Cone"> | **Cone** | Reduz 1 ponto de vida ao colidir. |
+    | <img src="assets/sprites_do_jogo/zagueiro.png" width="40" alt="Zagueiro"> | **Zagueiro** | Reduz 2 pontos de vida ao colidir. |
+    | <img src="assets/sprites_do_jogo/cartão_vermelho.png" width="40" alt="Cartão Vermelho"> | **Cartão Vermelho** | Reduz 3 pontos de vida ao colidir. |
 
    * Gerencie suas vidas com cuidado, aproveite os coletáveis estrategicamente e tente alcançar a maior pontuação possível antes que suas vidas acabem.
  
 * **Instruções:**
     * Clone ou baixe nosso código no repositório oficial: https://github.com/sfmff/Projeto-IP-grupo-01
     * Rode o arquivo main.py.
+    * Aperte F11 para tela cheia.
  
 
 # BOM JOGO E RUMO AO HEXA! 🏆
