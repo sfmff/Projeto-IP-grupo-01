@@ -94,28 +94,56 @@ class Game:
         self.SPAWN_OBSTACULO = pygame.USEREVENT + 1
         self.SPAWN_COLETAVEL = pygame.USEREVENT + 2
         
-        pygame.time.set_timer(self.SPAWN_OBSTACULO, 1500) 
-        pygame.time.set_timer(self.SPAWN_COLETAVEL, 4000) 
+        self.tempo_jogo = 0.0
+
+        self.INTERVALO_OBS_INICIAL = 1.5
+        self.INTERVALO_COL_INICIAL = 4.0
+
+        self.FATOR_FREQUENCIA_MAX_OBS = 4.0
+        self.FATOR_FREQUENCIA_MAX_COL = 2.0
+        self.TEMPO_PARA_DIFICULDADE_MAX = 150
+        
+        self.timer_spawn_obstaculo = 0.0
+        self.timer_spawn_coletavel = 0.0
+
+
+    def atualizar_dificuldade(self):
+        progresso = min(self.tempo_jogo / self.TEMPO_PARA_DIFICULDADE_MAX, 1.0)
+
+        fator_freq_obs = 1.0 + (self.FATOR_FREQUENCIA_MAX_OBS - 1.0) * progresso
+        fator_freq_col = 1.0 + (self.FATOR_FREQUENCIA_MAX_COL - 1.0) * progresso
+
+        intervalo_obs = self.INTERVALO_OBS_INICIAL / fator_freq_obs
+        intervalo_col = self.INTERVALO_COL_INICIAL / fator_freq_col
+        return intervalo_obs, intervalo_col
 
 
     def gerenciar_evento(self, evento):
         if evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE:
             self.app.voltar_ao_menu()
-            
-        if evento.type == self.SPAWN_OBSTACULO:
+
+
+    def atualizar(self, variacao_tempo):
+        self.tempo_jogo += variacao_tempo
+
+        intervalo_obs, intervalo_col = self.atualizar_dificuldade()
+
+        self.timer_spawn_obstaculo += variacao_tempo
+        if self.timer_spawn_obstaculo >= intervalo_obs:
+            self.timer_spawn_obstaculo -= intervalo_obs
             tipos = ('zagueiro', 'cone', 'cartão_amarelo', 'cartão_vermelho')
             obs = Obstaculo(LARGURA, ALTURA, random.choice(tipos))
             self.obstaculos.add(obs)
             self.todas_sprites.add(obs)
-            
-        if evento.type == self.SPAWN_COLETAVEL:
+
+        self.timer_spawn_coletavel += variacao_tempo
+        if self.timer_spawn_coletavel >= intervalo_col:
+            self.timer_spawn_coletavel -= intervalo_col
             tipos = ('bola_ouro', 'isotonico', 'caneleira')
             item = Coletavel(LARGURA, ALTURA, random.choice(tipos))
             self.coletaveis.add(item)
             self.todas_sprites.add(item)
 
-
-    def atualizar(self, variacao_tempo):
         self.jogador.movimento()
         self.todas_sprites.update()
         
