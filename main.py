@@ -44,9 +44,7 @@ class FundoJogo:
                 self.imagem = pygame.image.load("assets/sprites_do_jogo/cenario.png").convert()
                 self.imagem = pygame.transform.scale(self.imagem, (LARGURA, ALTURA))
             except Exception:
-                print("Aviso: Imagem cenario.png não encontrada. Usando fundo verde reserva.")
-                self.imagem = pygame.Surface((LARGURA, ALTURA))
-                self.imagem.fill((34, 139, 34))
+                print("Aviso: Imagem cenario.png não encontrada.")
 
             self.y1 = 0
             self.y2 = -ALTURA
@@ -77,6 +75,21 @@ class Game:
 
         self.jogador = Jogador(LARGURA // 2, ALTURA - 200, LARGURA, ALTURA)
         self.todas_sprites.add(self.jogador)
+
+        self.imagem_vida = pygame.image.load("assets/sprites_do_jogo/vida.png").convert_alpha()
+        self.imagem_vida = pygame.transform.scale(self.imagem_vida, (45, 45))
+        self.imagem_bola_ouro = pygame.image.load('assets/sprites_do_jogo/bola_de_ouro.png').convert_alpha()
+        self.imagem_bola_ouro = pygame.transform.scale(self.imagem_bola_ouro, (40, 40))
+        self.imagem_gatorade = pygame.image.load('assets/sprites_do_jogo/isotonico.png').convert_alpha()
+        self.imagem_gatorade = pygame.transform.scale(self.imagem_gatorade, (40, 40))
+        self.imagem_caneleira = pygame.image.load('assets/sprites_do_jogo/caneleira_aco.png').convert_alpha()
+        self.imagem_caneleira = pygame.transform.scale(self.imagem_caneleira, (40, 40)) 
+        self.imagem_pontuacao = pygame.image.load('assets/sprites_do_jogo/pontuacao.png').convert_alpha()
+        self.imagem_pontuacao = pygame.transform.scale(self.imagem_pontuacao, (150, 120)) 
+        self.imagem_turbo = pygame.image.load('assets/sprites_do_jogo/turbo.png').convert_alpha()
+        self.imagem_turbo = pygame.transform.scale(self.imagem_turbo, (280, 230)) 
+        self.imagem_turbo_apagado = pygame.image.load('assets/sprites_do_jogo/turbo(apagado).png').convert_alpha()
+        self.imagem_turbo_apagado = pygame.transform.scale(self.imagem_turbo_apagado, (280, 230))
 
         self.SPAWN_OBSTACULO = pygame.USEREVENT + 1
         self.SPAWN_COLETAVEL = pygame.USEREVENT + 2
@@ -127,33 +140,45 @@ class Game:
         
         self.todas_sprites.draw(tela)
         
-        contagem_vidas = FONTE_UI.render(f"Contagem de Vidas: {self.jogador.vidas}", True, BRANCO)
-        contagem_pontos = FONTE_UI.render(f"Pontuação: {self.jogador.pontuaçao}", True, BRANCO)
-        contagem_bolas_ouro = FONTE_UI.render(f"Bolas de Ouro: {self.jogador.bolas_de_ouro}", True, BRANCO)
-        contagem_caneleiras = FONTE_UI.render(f"Caneleiras: {self.jogador.caneleira}", True, BRANCO)
-        contagem_gatorade = FONTE_UI.render(f"Isotônicos: {self.jogador.gatorade}", True, BRANCO)
+        contagem_vidas = FONTE_UI.render(f"x {self.jogador.vidas}", True, BRANCO)
+        contagem_pontos = FONTE_UI.render(f": {self.jogador.pontuaçao}", True, BRANCO)
+        contagem_bolas_ouro = FONTE_UI.render(f"x {self.jogador.bolas_de_ouro}", True, BRANCO)
+        contagem_caneleiras = FONTE_UI.render(f"x {self.jogador.caneleira}", True, BRANCO)
+        contagem_gatorade = FONTE_UI.render(f"x {self.jogador.gatorade}", True, BRANCO)
         
-        fundo_placar = pygame.Surface((300, 80))
-        fundo_placar.set_alpha(128) 
+        fundo_placar = pygame.Surface((250, 115))
+        fundo_placar.set_alpha(128)
         fundo_placar.fill(PRETO)
         tela.blit(fundo_placar, (20, 20))
 
-        fundo_coletaveis = pygame.Surface((280, 110))
+        fundo_coletaveis = pygame.Surface((290, 60))
         fundo_coletaveis.set_alpha(128) 
         fundo_coletaveis.fill(PRETO)
         tela.blit(fundo_coletaveis, (500, 20))
 
-        tela.blit(contagem_vidas, (30, 30))
-        tela.blit(contagem_pontos, (30, 60))
-        tela.blit(contagem_bolas_ouro, (520, 30))
-        tela.blit(contagem_caneleiras, (520, 60))
-        tela.blit(contagem_gatorade, (520, 90))
+        tela.blit(self.imagem_pontuacao, (20, 0))
+        tela.blit(self.imagem_vida, (30, 80))
+        tela.blit(self.imagem_bola_ouro, (510, 30))
+        tela.blit(self.imagem_caneleira, (600, 30))
+        tela.blit(self.imagem_gatorade, (690, 30))
+
+        tela.blit(contagem_pontos, (160, 45))
+        tela.blit(contagem_vidas, (80, 90))
+        tela.blit(contagem_bolas_ouro, (550, 38))
+        tela.blit(contagem_caneleiras, (640, 38))
+        tela.blit(contagem_gatorade, (730, 38))
         
         if self.jogador.efeito_invencibilidade:
-            texto_turbo = FONTE_UI.render("TURBO ATIVADO!", True, AMARELO)
-            tela.blit(texto_turbo, (LARGURA // 2 - 80, 40))
+            tempo_atual = pygame.time.get_ticks()
 
-            pygame.draw.circle(tela, (0, 250, 0), self.jogador.hitbox.center, 50, 2)
+            if (tempo_atual // 400) % 2 == 0:
+                imagem_turbo = self.imagem_turbo
+            else:
+                imagem_turbo = self.imagem_turbo_apagado
+
+            imagem_turbo.set_alpha(200)
+            tela.blit(imagem_turbo, (250, 10))
+            pygame.draw.circle(tela, (135, 206, 235), self.jogador.hitbox.center, 50, 2)
 
 
 class App:
@@ -168,6 +193,7 @@ class App:
         self.tela_game_over = None 
         self.jogo = None
         self.rodando = True
+        self.tela_cheia = False
 
 
     def iniciar_jogo(self):
@@ -195,6 +221,13 @@ class App:
             self.rodando = False
             return
         
+        if evento.type == pygame.KEYDOWN and evento.key == pygame.K_F11:
+            self.tela_cheia = not self.tela_cheia
+            if self.tela_cheia:
+                pygame.display.set_mode((LARGURA, ALTURA), pygame.FULLSCREEN | pygame.SCALED)
+            else:
+                pygame.display.set_mode((LARGURA, ALTURA))
+
         if self.estado_atual == App.ESTADO_MENU:
             self.menu.gerenciar_evento(evento)
         elif self.estado_atual == App.ESTADO_JOGO:
