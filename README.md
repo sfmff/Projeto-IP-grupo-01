@@ -94,7 +94,7 @@ assets
 * **Leonardo Quintella Mendes Remigio:** responsável pelas imagens e sons do jogo na pasta assets.
 * **Saulo Fabianne de Melo Ferreira Filho:** responsável pela lógica dos obstáculos em obstaculos.py e pelo README.
 * **Theo Bessa da Costa:** responsável pela interface em menu_inicial.py e game_over.py.
-* **Tiago Almeida Rolim Cruz:** responsável pela lógica de funcionamento do jogoe do HUD em main.py.
+* **Tiago Almeida Rolim Cruz:** responsável pela lógica de funcionamento do jogo e do HUD em main.py.
 
 ## 7.📚 Conceitos de Programação utilizados: 
 Durante o desenvolvimento do projeto, diversos conceitos estudados na disciplina foram aplicados na prática, além da aprendizagem de novos conceitos necessários para a implementação do jogo :
