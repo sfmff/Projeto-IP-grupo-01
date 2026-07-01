@@ -165,7 +165,6 @@ class Game:
     def desenhar(self, tela):
         velocidade_campo = 8 if self.jogador.efeito_invencibilidade else 4
         self.fundo.desenhar(tela, velocidade=velocidade_campo)
-        
         self.todas_sprites.draw(tela)
         
         contagem_vidas = FONTE_UI.render(f"x {self.jogador.vidas}", True, BRANCO)
@@ -178,7 +177,6 @@ class Game:
         fundo_placar.set_alpha(128)
         fundo_placar.fill(PRETO)
         tela.blit(fundo_placar, (20, 20))
-
         fundo_coletaveis = pygame.Surface((290, 60))
         fundo_coletaveis.set_alpha(128) 
         fundo_coletaveis.fill(PRETO)
