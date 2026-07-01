@@ -89,12 +89,12 @@ assets
 * Pixabay: Usado para criação dos áudios do jogo presentes nos assets.
 
 ## 6.📝 Divisão de trabalho: 
-* **Daniel Cavalcanti Monteiro:** responsável pela lógica dos coletáveis em coletaveis.py.
-* **Fernando Corrêa Gambôa Pereira dos Santos:** responsável pela lógica envolvendo o jogador (vidas, efeitos, movimentação...) em jogador.py.
-* **Leonardo Quintella Mendes Remigio:** responsável pelas imagens e sons do jogo na pasta assets.
-* **Saulo Fabianne de Melo Ferreira Filho:** responsável pela lógica dos obstáculos em obstaculos.py e pelo README.
-* **Theo Bessa da Costa:** responsável pela interface em menu_inicial.py e game_over.py.
-* **Tiago Almeida Rolim Cruz:** responsável pela lógica de funcionamento do jogo e do HUD em main.py.
+* **Daniel Cavalcanti Monteiro:** Responsável pela lógica dos coletáveis em coletaveis.py.
+* **Fernando Corrêa Gambôa Pereira dos Santos:** Responsável pela lógica envolvendo o jogador (vidas, efeitos, movimentação...) em jogador.py.
+* **Leonardo Quintella Mendes Remigio:** Responsável pelas imagens e sons do jogo na pasta assets.
+* **Saulo Fabianne de Melo Ferreira Filho:** Responsável pela lógica dos obstáculos em obstaculos.py e pelo README.
+* **Theo Bessa da Costa:** Responsável pela interface em menu_inicial.py e game_over.py.
+* **Tiago Almeida Rolim Cruz:** Responsável pela lógica de funcionamento do jogo e do HUD em main.py.
 
 ## 7.📚 Conceitos de Programação utilizados: 
 Durante o desenvolvimento do projeto, diversos conceitos estudados na disciplina foram aplicados na prática, além da aprendizagem de novos conceitos necessários para a implementação do jogo :
@@ -132,7 +132,7 @@ Durante o desenvolvimento do projeto, diversos conceitos estudados na disciplina
 
   * O jogador inicia a partida com 5 pontos de vida e deve sobreviver o maior tempo possível enquanto aumenta sua pontuação. Para controlar o personagem, utilize as setas do teclado para se movimentar, desviar dos obstáculos e coletar os coletáveis espalhados pelo cenário para ganhar vantagens.
 
-  ### 🎮 Elementos do Jogo
+  ### 🕹️ Elementos do Jogo
 
     #### 🟩 Coletáveis
 
