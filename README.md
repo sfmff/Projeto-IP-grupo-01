@@ -1,8 +1,8 @@
-# ⚽ Desafio do Dribble Infinito 🥅
+# ⚽ Desafio do Drible Infinito 🥅
 
 ## 1.📖 Sinopse:
 
-**Chegou a hora de calçar as chuteiras e entrar em campo! Prepare-se para ajudar nosso craque Neymar Jr. nessa corrida frenética rumo ao hexa! Aviso: Cuidado com os carrinhos dos zagueiros adversários e com o apito do juiz... eles farão de tudo para te expulsar de campo. Mostre que você tem ginga, desvie das faltas, colete os bônus e prove que nosso camisa 10 é merecedor da Bola de Ouro e da Taça da Copa!**
+**O apito soou e o jogo começou! Assuma o controle do nosso camisa 10, Neymar Jr., em uma corrida infinita alucinante rumo ao sonhado hexa. A ginga brasileira é sua maior arma: drible zagueiros implacáveis, escape dos cones traiçoeiros e fuja dos cartões de um juiz rigoroso que quer te mandar para o chuveiro mais cedo. Agarre Bolas de Ouro para multiplicar sua glória, recupere o fôlego com caneleiras e ative o turbo com isotônicos para deixar a defesa adversária comendo poeira. Você tem habilidade suficiente para levantar a Taça?**
 
 ## 2.🚹 Participantes:
 * Daniel Cavalcanti Monteiro
