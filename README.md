@@ -79,14 +79,14 @@ assets
 ![Tela Game Over](assets/prints_do_jogo/tela_game_over.png)
 
 ## 5.🛠 Ferramentas, bibliotecas e frameworks utilizados:
-* Python 3.12+.
-* Biblioteca Pygame: Biblioteca principal utilizada para a construção do jogo, sendo responsável pela criação da janela e do loop principal, pela captura de eventos de teclado e mouse, pela renderização das imagens e formas geométricas e pela reprodução de efeitos sonoros e músicas. O framework também facilitou o gerenciamento das entidades do jogo e permitiu implementar colisões de forma simples e hitboxes ajustadas.
-* Random: Biblioteca usada para gerar aleatoriedade principalmente para os obstáculos e coletáveis do jogo.
-* Sys: Biblioteca usada para encerrar corretamente o processo do programa, garantindo que a aplicação feche por completo junto com a janela do Pygame.
-* GitHub: Usado para versionamento de código, criação de branches e Pull Requests para manter o código seguro durante o trabalho em equipe.
-* VS Code: Editor de código utilizado para o desenvolvimento do projeto, facilitando a escrita e organização dos múltiplos arquivos (main.py, jogador.py, obstaculos.py, etc.), a navegação entre eles e a identificação de erros de sintaxe durante a codificação.
-* Spritesheet Generator: Usado para gerar as imagens dos sprites do jogo presentes nos assets.
-* Pixabay: Usado para criação dos áudios do jogo presentes nos assets.
+* **Python 3.12+.**
+* **Biblioteca Pygame:** Biblioteca principal utilizada para a construção do jogo, sendo responsável pela criação da janela e do loop principal, pela captura de eventos de teclado e mouse, pela renderização das imagens e formas geométricas e pela reprodução de efeitos sonoros e músicas. O framework também facilitou o gerenciamento das entidades do jogo e permitiu implementar colisões de forma simples e hitboxes ajustadas.
+* **Random:** Biblioteca usada para gerar aleatoriedade principalmente para os obstáculos e coletáveis do jogo.
+* **Sys:** Biblioteca usada para encerrar corretamente o processo do programa, garantindo que a aplicação feche por completo junto com a janela do Pygame.
+* **GitHub:** Usado para versionamento de código, criação de branches e Pull Requests para manter o código seguro durante o trabalho em equipe.
+* **VS Code:** Editor de código utilizado para o desenvolvimento do projeto, facilitando a escrita e organização dos múltiplos arquivos (main.py, jogador.py, obstaculos.py, etc.), a navegação entre eles e a identificação de erros de sintaxe durante a codificação.
+* **Spritesheet Generator:** Usado para gerar as imagens dos sprites do jogo presentes nos assets.
+* **Pixabay:** Usado para criação dos áudios do jogo presentes nos assets.
 
 ## 6.📝 Divisão de trabalho: 
 * **Daniel Cavalcanti Monteiro:** Responsável pela lógica dos coletáveis em coletaveis.py.
