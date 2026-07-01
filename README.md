@@ -19,11 +19,11 @@ O jogo foi desenvolvido com a biblioteca Pygame e estruturado de forma modular (
 ```text
 assets
     ├── audios
-    │   ├── clique_botao.mp3
-    │   ├── musica_menu.mp3
-    │   ├── passar_cima_botao.mp3
-    │   ├── som_apito.mp3
-    │   └── som_torcida_menor.mp3
+    │   ├── clique_botao.mp3        # Som emitido ao clicar em um botão dos menus
+    │   ├── musica_menu.mp3         # Trilha sonora do jogo
+    │   ├── passar_cima_botao.mp3   # Som emitido ao passar o mouse sobre os botões
+    │   ├── som_apito.mp3           # Som emitido ao colidir com um obstáculo
+    │   └── som_torcida_menor.mp3   # Som emitido ao colidir com um coletável
     ├── prints_do_jogo
     │   ├── tela_game_over.png
     │   ├── tela_inicial.png
@@ -33,16 +33,15 @@ assets
     │   ├── tela_jogo4.png
     │   └── tela_turbo.png
     └── sprites_do_jogo
-        ├── bola_de_ouro.png
-        ├── caneleira_aco.png
-        ├── cartão_amarelo.png
-        ├── cartão_vermelho.png
-        ├── cenario.png
-        ├── cone.png
-        ├── isotonico.png
-        ├── neymar.png
-        ├── neymar_run_sheet.png
-        └── zagueiro.png
+        ├── bola_de_ouro.png       # Imagem do troféu Bola de Ouro (coletável)
+        ├── caneleira_aco.png      # Imagem da caneleira de proteção (coletável)
+        ├── cartão_amarelo.png     # Imagem do cartão amarelo (obstáculo)
+        ├── cartão_vermelho.png    # Imagem do cartão vermelho (obstáculo)
+        ├── cenario.png            # Imagem de fundo do campo de futebol onde o jogo ocorre
+        ├── cone.png               # Imagem do cone de treino (obstáculo)
+        ├── isotonico.png          # Imagem da garrafa de isotônico (coletável)
+        ├── neymar_run_sheet.png   # Folha com a sequência de imagens para a animação de corrida do Neymar
+        └── zagueiro.png           # Imagem do zagueiro adversário (obstáculo)
 ```
 
 * **main.py:** Controla o loop principal do jogo, gerencia a tela, atualiza os grupos de sprites e calcula as colisões.
@@ -128,17 +127,26 @@ Durante o desenvolvimento do projeto, diversos conceitos estudados na disciplina
 
 * **Mecânicas do jogo**
 
-  * O jogador inicia a partida com 5 pontos de vida e deve sobreviver o maior tempo possível enquanto aumenta sua pontuação. Para controlar o personagem, utilize as setas do teclado para se movimentar e desviar dos obstáculos.
+  * O jogador inicia a partida com 5 pontos de vida e deve sobreviver o maior tempo possível enquanto aumenta sua pontuação. Para controlar o personagem, utilize as setas do teclado para se movimentar, desviar dos obstáculos e coletar os coletáveis espalhados pelo cenário para ganhar vantagens.
 
-   * **Coletáveis**
-       * 🏆 Bola de Ouro: aumenta o multiplicador da pontuação, fazendo com que a pontuação cresça mais rapidamente.
-       * 🦵 Caneleira: concede +1 ponto de vida, permitindo ao jogador recuperar parte da saúde perdida.
-       * 🥤 Isotônico: ativa o Turbo, aumentando a velocidade do personagem e concedendo imunidade temporária contra os obstáculos por alguns segundos.
-  * **Obstáculos**
-       * 🟨 Cartão Amarelo: reduz 1 ponto de vida.
-       * 🗼 Cone: reduz 1 ponto de vida.
-       * 🛡️ Zagueiro: reduz 2 pontos de vida
-       * 🟥 Cartão Vermelho: reduz 3 pontos de vida.
+  ### 🎮 Elementos do Jogo
+
+    #### 🟩 Coletáveis
+
+    | Item | Nome | Efeito / Descrição |
+    | :---: | :--- | :--- |
+    | <img src="assets/sprites_do_jogo/bola_de_ouro.png" width="40" alt="Bola de Ouro"> | **Bola de Ouro** | Aumenta o multiplicador da pontuação, fazendo com que     os pontos cresçam mais rapidamente. |
+    | <img src="assets/sprites_do_jogo/caneleira_aco.png" width="40" alt="Caneleira"> | **Caneleira** | Concede +1 ponto de vida, permitindo ao jogador recuperar     parte da saúde perdida. |
+    | <img src="assets/sprites_do_jogo/isotonico.png" width="40" alt="Isotônico"> | **Isotônico** | Ativa o Turbo, aumentando a velocidade do personagem e             concedendo imunidade temporária contra obstáculos por alguns segundos. |
+
+    #### 🟥 Obstáculos
+
+    | Obstáculo | Nome | Penalidade / Descrição |
+    | :---: | :--- | :--- |
+    | <img src="assets/sprites_do_jogo/cartão_amarelo.png" width="40" alt="Cartão Amarelo"> | **Cartão Amarelo** | Reduz 1 ponto de vida ao colidir. |
+    | <img src="assets/sprites_do_jogo/cone.png" width="40" alt="Cone"> | **Cone** | Reduz 1 ponto de vida ao colidir. |
+    | <img src="assets/sprites_do_jogo/zagueiro.png" width="40" alt="Zagueiro"> | **Zagueiro** | Reduz 2 pontos de vida ao colidir. |
+    | <img src="assets/sprites_do_jogo/cartão_vermelho.png" width="40" alt="Cartão Vermelho"> | **Cartão Vermelho** | Reduz 3 pontos de vida ao colidir. |
 
    * Gerencie suas vidas com cuidado, aproveite os coletáveis estrategicamente e tente alcançar a maior pontuação possível antes que suas vidas acabem.
  
