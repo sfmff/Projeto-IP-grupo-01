@@ -11,6 +11,7 @@ from game_over import GameOver
 LARGURA, ALTURA = 800, 600
 FPS = 60
 
+AZUL = (135, 206, 235)
 PRETO = (20, 20, 20)
 BRANCO = (245, 245, 245)
 AMARELO = (255, 215, 0)
@@ -204,7 +205,7 @@ class Game:
 
             imagem_turbo.set_alpha(200)
             tela.blit(imagem_turbo, (250, 10))
-            pygame.draw.circle(tela, (135, 206, 235), self.jogador.hitbox.center, 50, 2)
+            pygame.draw.circle(tela, (AZUL), self.jogador.hitbox.center, 50, 2)
 
 
 class App:
