@@ -41,10 +41,11 @@ assets
         ├── cone.png               # Imagem do cone de treino (obstáculo)
         ├── isotonico.png          # Imagem da garrafa de isotônico (coletável)
         ├── neymar_run_sheet.png   # Folha com a sequência de imagens para a animação de corrida do Neymar
-        └── zagueiro.png           # Imagem do zagueiro adversário (obstáculo)
-        └── vida.png               # Imagem de coração para representar a vida no HUD
-        └── turbo.png              # Texto especial para representar o uso do isotônico
+        └── pontuacao.png          # Texto estilizado escrito "PONTUAÇÃO" 
         └── turbo(apagado).png     # Texto especial para representar o uso do isotônico
+        └── turbo.png              # Texto especial para representar o uso do isotônico
+        └── vida.png               # Imagem de coração para representar a vida no HUD
+        └── zagueiro.png           # Imagem do zagueiro adversário (obstáculo)
 ```
 
 * **main.py:** Controla o loop principal do jogo, gerencia a tela, atualiza os grupos de sprites e calcula as colisões.
