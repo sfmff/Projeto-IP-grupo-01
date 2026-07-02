@@ -129,6 +129,23 @@ Durante o desenvolvimento do projeto, diversos conceitos estudados na disciplina
     * Python 3.x instalado.
     * Pygame instalado (rode pip install pygame no terminal).
 
+* **Instruções:**
+
+    **Instalação:**
+    ```bash
+    #Clone o repositório
+    git clone https://github.com/sfmff/Projeto-IP-grupo-01.git
+
+    #Acesse a pasta do projeto
+    cd Projeto-IP-grupo-01
+
+    # Instale a dependência gráfica
+    pip install pygame
+
+    # Inicie o jogo
+    python main.py
+    ```
+
 * **Mecânicas do jogo**
 
   * O jogador inicia a partida com 5 pontos de vida e deve sobreviver o maior tempo possível enquanto aumenta sua pontuação. Com o passar do tempo, cada vez mais obstáculos aparecerão para atrapalhar. Para controlar o personagem, utilize as setas do teclado para se movimentar, desviar dos obstáculos e coletar os coletáveis espalhados pelo cenário para ganhar vantagens.
@@ -154,9 +171,8 @@ Durante o desenvolvimento do projeto, diversos conceitos estudados na disciplina
 
    * Gerencie suas vidas com cuidado, aproveite os coletáveis estrategicamente e tente alcançar a maior pontuação possível antes que suas vidas acabem.
  
-* **Instruções:**
-    * Clone ou baixe nosso código no repositório oficial: https://github.com/sfmff/Projeto-IP-grupo-01
-    * Rode o arquivo main.py.
+
+    
     * Aperte F11 para tela cheia.
  
 
